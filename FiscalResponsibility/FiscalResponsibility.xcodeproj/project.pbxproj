@@ -38,7 +38,6 @@
 		00915F4A2007E83000E208BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A06455B42007DC2E005DD8F2 /* Info.plist */,
 				A06455AF2007DC2E005DD8F2 /* Assets.xcassets */,
 				A06455B12007DC2E005DD8F2 /* LaunchScreen.storyboard */,
 			);
@@ -65,6 +64,7 @@
 		A06455A72007DC2E005DD8F2 /* FiscalResponsibility */ = {
 			isa = PBXGroup;
 			children = (
+				A06455B42007DC2E005DD8F2 /* Info.plist */,
 				00915F4B2007E86800E208BA /* LoginViewController.swift */,
 				A06455A82007DC2E005DD8F2 /* AppDelegate.swift */,
 				A06455AC2007DC2E005DD8F2 /* Main.storyboard */,
