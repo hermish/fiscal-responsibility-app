@@ -10,9 +10,10 @@ import UIKit
 
 class UserListTableViewController: UITableViewController {
 
+    var users:[User]?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.performSegue(withIdentifier: "SegueToUserVC", sender: self)
+        //self.performSegue(withIdentifier: "SegueToUserVC", sender: self)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -20,6 +21,13 @@ class UserListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        users = DataManager.sharedInstance.users
+        tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -27,25 +35,30 @@ class UserListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if let userCount = users?.count{
+            return userCount
+        }
+        
         return 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! UserTableViewCell
 
         // Configure the cell...
+        
+        let user = users![indexPath.row] as User
+        cell.userImage?.image = user.image!
+        cell.userCardNum.text = user.cardNumber!
+        cell.userName.text = "\(String(describing: user.firstName!)) \(String(describing: user.lastName!))"
+        
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,5 +104,9 @@ class UserListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "SegueToUserVC", sender: self)
+    }
 
 }

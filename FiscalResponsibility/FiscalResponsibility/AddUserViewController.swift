@@ -35,7 +35,6 @@ class AddUserViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: Any) {
         updateUsers()
-        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addPhotoPressed(_ sender: Any) {
@@ -72,11 +71,19 @@ class AddUserViewController: UIViewController {
     */
     
     func updateUsers() {
-        if let first = firstName.text, !first.isEmpty{
-            print("we have text")
-            
-        }
         
+        let firstName = self.firstName.text!
+        let lastName = self.lastName.text!
+        let cardNumber = self.cardNumber.text!
+        let nickName = self.nickName.text!
+        let photo = self.userImage!
+        
+        let user = User(image: photo, firstName: firstName
+            , lastName: lastName, nickName: nickName, cardNumber: cardNumber)
+
+        DataManager.sharedInstance.users.append(user)
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
