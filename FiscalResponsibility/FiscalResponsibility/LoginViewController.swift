@@ -10,6 +10,20 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+	@IBOutlet weak var username: UITextField!
+	@IBOutlet weak var password: UITextField!
+	@IBOutlet weak var labelMessage: UILabel!
+	
+	@IBAction func userLogin(_ sender: UIButton) {
+		if username.text == "User" && password.text == "Pass" {
+			performSegue(withIdentifier: "loginSegue", sender: sender)
+		}
+		else {
+			labelMessage.text = "Invalid username or password"
+		}
+		
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
