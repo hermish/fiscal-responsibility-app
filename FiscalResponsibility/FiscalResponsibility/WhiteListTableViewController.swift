@@ -11,7 +11,7 @@ import UIKit
 class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let whiteList = ["Target", "Walmart", "McDonalds"]
+    var whiteList = ["Target", "Walmart", "McDonalds", "Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds",]
     
     
     override func viewDidLoad() {
@@ -66,6 +66,20 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
             return 40
         } else{
             return 40
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            whiteList.remove(at: indexPath.row - 1)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
 
