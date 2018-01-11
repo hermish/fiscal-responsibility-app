@@ -69,6 +69,7 @@
 		00915F4A2007E83000E208BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				77E8E73E2007F33B00722314 /* hqdefault.jpg */,
 				A06455AF2007DC2E005DD8F2 /* Assets.xcassets */,
 				A06455B12007DC2E005DD8F2 /* LaunchScreen.storyboard */,
 			);
@@ -120,10 +121,14 @@
 			isa = PBXGroup;
 			children = (
 				A06455B42007DC2E005DD8F2 /* Info.plist */,
+				77E8E7382007EC1E00722314 /* WhiteListTableViewCell.swift */,
 				00915F4B2007E86800E208BA /* LoginViewController.swift */,
 				A06455A82007DC2E005DD8F2 /* AppDelegate.swift */,
 				00915F4F2008074200E208BA /* Nessie-iOS-Wrapper */,
 				A06455AC2007DC2E005DD8F2 /* Main.storyboard */,
+				77E8E73C2007EF4200722314 /* UserListTableViewController.swift */,
+				77E8E73A2007ECD400722314 /* WhiteListTableViewController.swift */,
+				77E8E7442008051600722314 /* HeaderCellTableViewCell.swift */,
 			);
 			path = FiscalResponsibility;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				00915F6A2008074200E208BA /* Info.plist in Resources */,
 				A06455B32007DC2E005DD8F2 /* LaunchScreen.storyboard in Resources */,
 				A06455B02007DC2E005DD8F2 /* Assets.xcassets in Resources */,
+				77E8E73F2007F33C00722314 /* hqdefault.jpg in Resources */,
 				A06455AE2007DC2E005DD8F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
