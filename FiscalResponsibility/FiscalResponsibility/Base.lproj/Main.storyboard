@@ -263,6 +263,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Capital_one_logo" width="2072" height="936"/>
         <image name="hqdefault.jpg" width="480" height="360"/>
     </resources>
 </document>
