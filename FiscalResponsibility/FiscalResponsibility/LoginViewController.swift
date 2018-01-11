@@ -37,6 +37,7 @@ class LoginViewController: UIViewController {
 			}
 			else if let account = account {
 				print(account.nickname)
+				print()
 			}
 					})
 		
