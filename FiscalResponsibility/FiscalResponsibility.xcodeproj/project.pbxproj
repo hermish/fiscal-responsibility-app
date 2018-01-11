@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		00915F4C2007E86800E208BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F4B2007E86800E208BA /* LoginViewController.swift */; };
+		77E8E7392007EC1E00722314 /* WhiteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8E7382007EC1E00722314 /* WhiteListTableViewCell.swift */; };
+		77E8E73B2007ECD400722314 /* WhiteListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8E73A2007ECD400722314 /* WhiteListTableViewController.swift */; };
+		77E8E73D2007EF4200722314 /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8E73C2007EF4200722314 /* UserListTableViewController.swift */; };
+		77E8E73F2007F33C00722314 /* hqdefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E8E73E2007F33B00722314 /* hqdefault.jpg */; };
+		77E8E7452008051600722314 /* HeaderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8E7442008051600722314 /* HeaderCellTableViewCell.swift */; };
 		A06455A92007DC2E005DD8F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06455A82007DC2E005DD8F2 /* AppDelegate.swift */; };
 		A06455AE2007DC2E005DD8F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06455AC2007DC2E005DD8F2 /* Main.storyboard */; };
 		A06455B02007DC2E005DD8F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A06455AF2007DC2E005DD8F2 /* Assets.xcassets */; };
@@ -16,6 +21,11 @@
 
 /* Begin PBXFileReference section */
 		00915F4B2007E86800E208BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		77E8E7382007EC1E00722314 /* WhiteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteListTableViewCell.swift; sourceTree = "<group>"; };
+		77E8E73A2007ECD400722314 /* WhiteListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteListTableViewController.swift; sourceTree = "<group>"; };
+		77E8E73C2007EF4200722314 /* UserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewController.swift; sourceTree = "<group>"; };
+		77E8E73E2007F33B00722314 /* hqdefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hqdefault.jpg; path = ../../../../Desktop/hqdefault.jpg; sourceTree = "<group>"; };
+		77E8E7442008051600722314 /* HeaderCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCellTableViewCell.swift; sourceTree = "<group>"; };
 		A06455A52007DC2E005DD8F2 /* FiscalResponsibility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiscalResponsibility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06455A82007DC2E005DD8F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A06455AD2007DC2E005DD8F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +48,7 @@
 		00915F4A2007E83000E208BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A06455B42007DC2E005DD8F2 /* Info.plist */,
+				77E8E73E2007F33B00722314 /* hqdefault.jpg */,
 				A06455AF2007DC2E005DD8F2 /* Assets.xcassets */,
 				A06455B12007DC2E005DD8F2 /* LaunchScreen.storyboard */,
 			);
@@ -65,9 +75,14 @@
 		A06455A72007DC2E005DD8F2 /* FiscalResponsibility */ = {
 			isa = PBXGroup;
 			children = (
+				A06455B42007DC2E005DD8F2 /* Info.plist */,
+				77E8E7382007EC1E00722314 /* WhiteListTableViewCell.swift */,
 				00915F4B2007E86800E208BA /* LoginViewController.swift */,
 				A06455A82007DC2E005DD8F2 /* AppDelegate.swift */,
 				A06455AC2007DC2E005DD8F2 /* Main.storyboard */,
+				77E8E73C2007EF4200722314 /* UserListTableViewController.swift */,
+				77E8E73A2007ECD400722314 /* WhiteListTableViewController.swift */,
+				77E8E7442008051600722314 /* HeaderCellTableViewCell.swift */,
 			);
 			path = FiscalResponsibility;
 			sourceTree = "<group>";
@@ -133,6 +148,7 @@
 			files = (
 				A06455B32007DC2E005DD8F2 /* LaunchScreen.storyboard in Resources */,
 				A06455B02007DC2E005DD8F2 /* Assets.xcassets in Resources */,
+				77E8E73F2007F33C00722314 /* hqdefault.jpg in Resources */,
 				A06455AE2007DC2E005DD8F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77E8E7392007EC1E00722314 /* WhiteListTableViewCell.swift in Sources */,
+				77E8E73B2007ECD400722314 /* WhiteListTableViewController.swift in Sources */,
+				77E8E73D2007EF4200722314 /* UserListTableViewController.swift in Sources */,
+				77E8E7452008051600722314 /* HeaderCellTableViewCell.swift in Sources */,
 				00915F4C2007E86800E208BA /* LoginViewController.swift in Sources */,
 				A06455A92007DC2E005DD8F2 /* AppDelegate.swift in Sources */,
 			);
