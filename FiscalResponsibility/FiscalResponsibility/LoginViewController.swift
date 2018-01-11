@@ -16,6 +16,16 @@ class LoginViewController: UIViewController {
 	
 	@IBAction func userLogin(_ sender: UIButton) {
 		if username.text == "User" && password.text == "Pass" {
+			
+//			AccountRequest().getAccount("5a563d195eaa612c093b0af6", completion: { (account, error) in
+//				if let account = account {
+//					print(account.nickname)
+//				}
+//				else if let error = error{
+//
+//				}
+//			})
+			
 			performSegue(withIdentifier: "loginSegue", sender: sender)
 		}
 		else {
@@ -24,7 +34,7 @@ class LoginViewController: UIViewController {
 		
 	}
 	
-    override func viewDidLoad() {
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

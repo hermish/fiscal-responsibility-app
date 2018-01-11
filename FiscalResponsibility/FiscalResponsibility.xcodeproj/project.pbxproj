@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		00915F4C2007E86800E208BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F4B2007E86800E208BA /* LoginViewController.swift */; };
+		00915F5F2008074200E208BA /* EnterpriseRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F502008074200E208BA /* EnterpriseRequests.swift */; };
+		00915F602008074200E208BA /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F522008074200E208BA /* Address.swift */; };
+		00915F612008074200E208BA /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F532008074200E208BA /* Branch.swift */; };
+		00915F622008074200E208BA /* NSEClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F542008074200E208BA /* NSEClient.swift */; };
+		00915F632008074200E208BA /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F552008074200E208BA /* Customer.swift */; };
+		00915F642008074200E208BA /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F562008074200E208BA /* Purchase.swift */; };
+		00915F652008074200E208BA /* Deposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F572008074200E208BA /* Deposit.swift */; };
+		00915F662008074200E208BA /* ATM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F582008074200E208BA /* ATM.swift */; };
+		00915F672008074200E208BA /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F592008074200E208BA /* Bill.swift */; };
+		00915F682008074200E208BA /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F5A2008074200E208BA /* Account.swift */; };
+		00915F692008074200E208BA /* Withdrawal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F5B2008074200E208BA /* Withdrawal.swift */; };
+		00915F6A2008074200E208BA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00915F5C2008074200E208BA /* Info.plist */; };
+		00915F6B2008074200E208BA /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F5D2008074200E208BA /* Merchant.swift */; };
+		00915F6C2008074200E208BA /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00915F5E2008074200E208BA /* Transfer.swift */; };
+		00C058D1200807C8001E3BA2 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C058D0200807C8001E3BA2 /* SwiftyJSON.swift */; };
 		A06455A92007DC2E005DD8F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06455A82007DC2E005DD8F2 /* AppDelegate.swift */; };
 		A06455AE2007DC2E005DD8F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06455AC2007DC2E005DD8F2 /* Main.storyboard */; };
 		A06455B02007DC2E005DD8F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A06455AF2007DC2E005DD8F2 /* Assets.xcassets */; };
@@ -16,6 +31,22 @@
 
 /* Begin PBXFileReference section */
 		00915F4B2007E86800E208BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		00915F502008074200E208BA /* EnterpriseRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterpriseRequests.swift; sourceTree = "<group>"; };
+		00915F512008074200E208BA /* Nessie-iOS-Wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Nessie-iOS-Wrapper.h"; sourceTree = "<group>"; };
+		00915F522008074200E208BA /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		00915F532008074200E208BA /* Branch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
+		00915F542008074200E208BA /* NSEClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSEClient.swift; sourceTree = "<group>"; };
+		00915F552008074200E208BA /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		00915F562008074200E208BA /* Purchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		00915F572008074200E208BA /* Deposit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deposit.swift; sourceTree = "<group>"; };
+		00915F582008074200E208BA /* ATM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATM.swift; sourceTree = "<group>"; };
+		00915F592008074200E208BA /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		00915F5A2008074200E208BA /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		00915F5B2008074200E208BA /* Withdrawal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Withdrawal.swift; sourceTree = "<group>"; };
+		00915F5C2008074200E208BA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00915F5D2008074200E208BA /* Merchant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
+		00915F5E2008074200E208BA /* Transfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		00C058D0200807C8001E3BA2 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "FiscalResponsibility/nessie-ios-sdk-swift-master/Pods/SwiftyJSON/Source/SwiftyJSON.swift"; sourceTree = SOURCE_ROOT; };
 		A06455A52007DC2E005DD8F2 /* FiscalResponsibility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiscalResponsibility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06455A82007DC2E005DD8F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A06455AD2007DC2E005DD8F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +75,30 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		00915F4F2008074200E208BA /* Nessie-iOS-Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				00C058D0200807C8001E3BA2 /* SwiftyJSON.swift */,
+				00915F502008074200E208BA /* EnterpriseRequests.swift */,
+				00915F512008074200E208BA /* Nessie-iOS-Wrapper.h */,
+				00915F522008074200E208BA /* Address.swift */,
+				00915F532008074200E208BA /* Branch.swift */,
+				00915F542008074200E208BA /* NSEClient.swift */,
+				00915F552008074200E208BA /* Customer.swift */,
+				00915F562008074200E208BA /* Purchase.swift */,
+				00915F572008074200E208BA /* Deposit.swift */,
+				00915F582008074200E208BA /* ATM.swift */,
+				00915F592008074200E208BA /* Bill.swift */,
+				00915F5A2008074200E208BA /* Account.swift */,
+				00915F5B2008074200E208BA /* Withdrawal.swift */,
+				00915F5C2008074200E208BA /* Info.plist */,
+				00915F5D2008074200E208BA /* Merchant.swift */,
+				00915F5E2008074200E208BA /* Transfer.swift */,
+			);
+			name = "Nessie-iOS-Wrapper";
+			path = "nessie-ios-sdk-swift-master/Nessie-iOS-Wrapper";
+			sourceTree = "<group>";
+		};
 		A064559C2007DC2E005DD8F2 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +122,7 @@
 				A06455B42007DC2E005DD8F2 /* Info.plist */,
 				00915F4B2007E86800E208BA /* LoginViewController.swift */,
 				A06455A82007DC2E005DD8F2 /* AppDelegate.swift */,
+				00915F4F2008074200E208BA /* Nessie-iOS-Wrapper */,
 				A06455AC2007DC2E005DD8F2 /* Main.storyboard */,
 			);
 			path = FiscalResponsibility;
@@ -131,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00915F6A2008074200E208BA /* Info.plist in Resources */,
 				A06455B32007DC2E005DD8F2 /* LaunchScreen.storyboard in Resources */,
 				A06455B02007DC2E005DD8F2 /* Assets.xcassets in Resources */,
 				A06455AE2007DC2E005DD8F2 /* Main.storyboard in Resources */,
@@ -144,8 +201,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00915F5F2008074200E208BA /* EnterpriseRequests.swift in Sources */,
+				00915F6C2008074200E208BA /* Transfer.swift in Sources */,
+				00915F6B2008074200E208BA /* Merchant.swift in Sources */,
+				00915F672008074200E208BA /* Bill.swift in Sources */,
+				00915F632008074200E208BA /* Customer.swift in Sources */,
+				00915F622008074200E208BA /* NSEClient.swift in Sources */,
+				00915F652008074200E208BA /* Deposit.swift in Sources */,
+				00915F682008074200E208BA /* Account.swift in Sources */,
 				00915F4C2007E86800E208BA /* LoginViewController.swift in Sources */,
+				00915F642008074200E208BA /* Purchase.swift in Sources */,
+				00915F612008074200E208BA /* Branch.swift in Sources */,
+				00C058D1200807C8001E3BA2 /* SwiftyJSON.swift in Sources */,
+				00915F602008074200E208BA /* Address.swift in Sources */,
+				00915F662008074200E208BA /* ATM.swift in Sources */,
 				A06455A92007DC2E005DD8F2 /* AppDelegate.swift in Sources */,
+				00915F692008074200E208BA /* Withdrawal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
