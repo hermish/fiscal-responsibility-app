@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eFO-Nw-QbI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -183,18 +184,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allowed Vendors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPG-8u-IR1">
-                                                    <rect key="frame" x="15" y="11" width="138" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allowed Vendors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPG-8u-IR1">
+                                                    <rect key="frame" x="15" y="11" width="128" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBP-We-Zco">
-                                                    <rect key="frame" x="338" y="10" width="22" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBP-We-Zco">
+                                                    <rect key="frame" x="343" y="10" width="22" height="22"/>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fPG-8u-IR1" firstAttribute="centerY" secondItem="fvo-gm-sQm" secondAttribute="centerY" id="N4Y-oj-plQ"/>
+                                                <constraint firstItem="fPG-8u-IR1" firstAttribute="leading" secondItem="fvo-gm-sQm" secondAttribute="leadingMargin" id="W7m-UZ-R5j"/>
+                                                <constraint firstAttribute="trailing" secondItem="UBP-We-Zco" secondAttribute="trailing" constant="10" id="s9J-yO-7fU"/>
+                                                <constraint firstItem="fPG-8u-IR1" firstAttribute="leading" secondItem="fvo-gm-sQm" secondAttribute="leadingMargin" id="uVk-GY-h38"/>
+                                                <constraint firstItem="UBP-We-Zco" firstAttribute="centerY" secondItem="fvo-gm-sQm" secondAttribute="centerY" id="z7f-sK-Fld"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="whiteListCell" rowHeight="37" id="CZ6-lX-FmL" customClass="WhiteListTableViewCell" customModule="FiscalResponsibility" customModuleProvider="target">
@@ -204,14 +210,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="36.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Whitelist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl3-v6-LxE">
-                                                    <rect key="frame" x="16" y="5" width="270" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whitelist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl3-v6-LxE">
+                                                    <rect key="frame" x="15" y="5" width="67" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nl3-v6-LxE" firstAttribute="bottom" secondItem="Ooe-C3-um3" secondAttribute="bottomMargin" id="Lw1-lL-ygq"/>
+                                                <constraint firstItem="nl3-v6-LxE" firstAttribute="leading" secondItem="Ooe-C3-um3" secondAttribute="leadingMargin" id="ijW-Sr-kOx"/>
+                                                <constraint firstItem="nl3-v6-LxE" firstAttribute="top" secondItem="Ooe-C3-um3" secondAttribute="topMargin" constant="-6" id="wJk-aZ-yTZ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="whiteListLabel" destination="nl3-v6-LxE" id="t7d-be-Rar"/>
