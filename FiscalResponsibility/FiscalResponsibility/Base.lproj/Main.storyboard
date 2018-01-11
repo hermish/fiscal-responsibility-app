@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eFO-Nw-QbI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="133"/>
+            <point key="canvasLocation" x="-204" y="133"/>
         </scene>
         <!--User List Table View Controller-->
         <scene sceneID="xi5-ng-UVS">
@@ -142,7 +142,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b44-ab-NTV">
                                 <rect key="frame" x="0.0" y="64" width="375" height="120"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hqdefault.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2uX-0A-Kkw">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hqdefault" translatesAutoresizingMaskIntoConstraints="NO" id="2uX-0A-Kkw">
                                         <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="108" id="6Kh-GZ-vAU"/>
@@ -264,6 +264,6 @@
     </scenes>
     <resources>
         <image name="Capital_one_logo" width="2072" height="936"/>
-        <image name="hqdefault.jpg" width="480" height="360"/>
+        <image name="hqdefault" width="480" height="360"/>
     </resources>
 </document>
