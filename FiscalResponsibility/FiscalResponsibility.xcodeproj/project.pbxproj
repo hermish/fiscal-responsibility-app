@@ -23,9 +23,11 @@
 		00F76B7E200810AD0073118A /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F76B6F200810AD0073118A /* Merchant.swift */; };
 		00F76B7F200810AD0073118A /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F76B70200810AD0073118A /* Transfer.swift */; };
 		00F76B81200810D60073118A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F76B80200810D60073118A /* SwiftyJSON.swift */; };
+		00F76B8520084D3A0073118A /* MapAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F76B8420084D3A0073118A /* MapAddViewController.swift */; };
 		77E8E7392007EC1E00722314 /* WhiteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8E7382007EC1E00722314 /* WhiteListTableViewCell.swift */; };
 		77E8E73B2007ECD400722314 /* WhiteListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8E73A2007ECD400722314 /* WhiteListTableViewController.swift */; };
 		77E8E73D2007EF4200722314 /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8E73C2007EF4200722314 /* UserListTableViewController.swift */; };
+		77E8E74720084DB900722314 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8E74620084DB900722314 /* TransferViewController.swift */; };
 		A06455A92007DC2E005DD8F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06455A82007DC2E005DD8F2 /* AppDelegate.swift */; };
 		A06455AE2007DC2E005DD8F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06455AC2007DC2E005DD8F2 /* Main.storyboard */; };
 		A06455B02007DC2E005DD8F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A06455AF2007DC2E005DD8F2 /* Assets.xcassets */; };
@@ -54,9 +56,11 @@
 		00F76B6F200810AD0073118A /* Merchant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
 		00F76B70200810AD0073118A /* Transfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
 		00F76B80200810D60073118A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		00F76B8420084D3A0073118A /* MapAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAddViewController.swift; sourceTree = "<group>"; };
 		77E8E7382007EC1E00722314 /* WhiteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteListTableViewCell.swift; sourceTree = "<group>"; };
 		77E8E73A2007ECD400722314 /* WhiteListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteListTableViewController.swift; sourceTree = "<group>"; };
 		77E8E73C2007EF4200722314 /* UserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewController.swift; sourceTree = "<group>"; };
+		77E8E74620084DB900722314 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 		A06455A52007DC2E005DD8F2 /* FiscalResponsibility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiscalResponsibility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06455A82007DC2E005DD8F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A06455AD2007DC2E005DD8F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,10 +141,12 @@
 				00F76B60200810AD0073118A /* Nessie-iOS-Wrapper */,
 				77E8E7382007EC1E00722314 /* WhiteListTableViewCell.swift */,
 				00915F4B2007E86800E208BA /* LoginViewController.swift */,
+				00F76B8420084D3A0073118A /* MapAddViewController.swift */,
 				A06455A82007DC2E005DD8F2 /* AppDelegate.swift */,
 				A06455AC2007DC2E005DD8F2 /* Main.storyboard */,
 				77E8E73C2007EF4200722314 /* UserListTableViewController.swift */,
 				77E8E73A2007ECD400722314 /* WhiteListTableViewController.swift */,
+				77E8E74620084DB900722314 /* TransferViewController.swift */,
 				A079A39B200816FF008C6291 /* AddUserViewController.swift */,
 				A079A39C200816FF008C6291 /* UserTableViewCell.swift */,
 				A079A39F20081BAE008C6291 /* DataManager.swift */,
@@ -224,6 +230,7 @@
 				00F76B73200810AD0073118A /* Address.swift in Sources */,
 				77E8E7392007EC1E00722314 /* WhiteListTableViewCell.swift in Sources */,
 				A079A39E200816FF008C6291 /* UserTableViewCell.swift in Sources */,
+				00F76B8520084D3A0073118A /* MapAddViewController.swift in Sources */,
 				00F76B7E200810AD0073118A /* Merchant.swift in Sources */,
 				77E8E73B2007ECD400722314 /* WhiteListTableViewController.swift in Sources */,
 				A079A3A020081BAE008C6291 /* DataManager.swift in Sources */,
@@ -231,6 +238,7 @@
 				00F76B79200810AD0073118A /* ATM.swift in Sources */,
 				00F76B76200810AD0073118A /* Customer.swift in Sources */,
 				00F76B7F200810AD0073118A /* Transfer.swift in Sources */,
+				77E8E74720084DB900722314 /* TransferViewController.swift in Sources */,
 				77E8E73D2007EF4200722314 /* UserListTableViewController.swift in Sources */,
 				00F76B7C200810AD0073118A /* Withdrawal.swift in Sources */,
 				00F76B71200810AD0073118A /* EnterpriseRequests.swift in Sources */,
