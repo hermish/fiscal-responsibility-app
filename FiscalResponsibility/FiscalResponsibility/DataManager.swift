@@ -21,6 +21,5 @@ struct User {
     var lastName:String
     var nickName:String
     var accountID:String
-    
 }
 
