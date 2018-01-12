@@ -13,6 +13,7 @@ class DataManager {
     static let sharedInstance = DataManager()
     
     var users = [User]()
+    var whitelist = ["Target", "Walmart", "McDonalds"]
 }
 
 struct User {

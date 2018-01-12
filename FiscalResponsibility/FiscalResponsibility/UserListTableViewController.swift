@@ -55,6 +55,8 @@ class UserListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "SegueToUserVC", sender: self)
+        let selectedUser = users![indexPath.row]
+        self.performSegue(withIdentifier: "SegueToUserVC", sender: selectedUser)
+        
     }
 }
