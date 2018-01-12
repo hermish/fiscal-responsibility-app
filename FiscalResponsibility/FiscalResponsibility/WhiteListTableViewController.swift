@@ -17,12 +17,12 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
 		performSegue(withIdentifier: "addSegue", sender: sender)
 	}
 	@IBOutlet weak var tableView: UITableView!
-    var whiteList = ["Target", "Walmart", "McDonalds", "Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds",]
+    var whiteList = DataManager.sharedInstance.whitelist
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "TableHeader", bundle: nil),
-                           forHeaderFooterViewReuseIdentifier: "TableHeader")
+//        tableView.register(UINib(nibName: "TableHeader", bundle: nil),
+//                           forHeaderFooterViewReuseIdentifier: "TableHeader")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,7 +30,7 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     override func viewWillAppear(_ animated: Bool) {
-        balanceLabel.text = "$\(UserDefaults.standard.getAmountFrom(kidName: "sam"))"
+        balanceLabel.text = "$\(UserDefaults.standard.getAmountFrom(kidName: ""))"
     }
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TableHeader")
@@ -48,22 +48,17 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return whiteList.count //+ 1
+        return DataManager.sharedInstance.whitelist.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "whiteListCell", for: indexPath) as! WhiteListTableViewCell
-            cell.whiteListLabel.text = whiteList[indexPath.row]
+            cell.whiteListLabel.text = DataManager.sharedInstance.whitelist[indexPath.row]
             return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0{
-            return 40
-        } else{
-            return 40
-        }
+        return 40
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -73,7 +68,7 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            whiteList.remove(at: indexPath.row)
+            DataManager.sharedInstance.whitelist.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
