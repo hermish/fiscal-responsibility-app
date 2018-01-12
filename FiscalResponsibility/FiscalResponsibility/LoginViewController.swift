@@ -64,13 +64,32 @@ class LoginViewController: UIViewController {
             }
         }
         
-        MerchantRequest().getMerchant(merchId) { (merchant, error) in
-            if let error = error {
-                print("There is an error: " + error.localizedFailureReason!)
-            }
-            else if let merchant = merchant{
-                let str = ""
-                for cat in merchant.category {
+        func generatePurchase(account : Account, merchant : Merchant){
+            let merchId = merchant.merchantId
+            let acctId = account.accountId
+            
+            var whitelist = ["Target", "Walmart", "McDonalds", "asd"]
+            
+            let purchase = Purchase(merchantId: merchId, status: BillStatus(rawValue: "completed")!, medium: TransactionMedium(rawValue: "balance")!,payerId: acctId, amount: 4.5, type:  "merchant" , purchaseDate: Date(), description: "Description", purchaseId: "asd")
+            
+            PurchaseRequest().postPurchase(purchase, accountId: acctId, completion:{(response, error) in
+                if (error != nil) {
+                    print(error!)
+                } else {
+                    let purchaseResponse = response as BaseResponse<Purchase>?
+                    let message = purchaseResponse?.message
+                    let purchaseCreated = purchaseResponse?.object
+                    print("\(message): \(purchaseCreated)")
+                    print()
+                    
+                    print("Merchant in whitelist: \(whitelist.contains(merchId))")
+                    
+                    if whitelist.contains(merchId) {
+                        print("Transaction at /(merchant.name) successful")
+                    }
+                    else{
+                        print("Sorry, you cannot shop here")
+                    }
                     
                 }
                 print("Merchant's Name:" + merchant.name)
@@ -81,10 +100,8 @@ class LoginViewController: UIViewController {
             }
         }
         
-        
-//        let test = Purchase(merchantId: merchId, status: "completed", medium: "balance", payerId: acctId, amount: 1000, type: merchant, purchaseDate: Date(), description: "iPhone Puchase" , purchaseId: <#T##String#>)
-//
-//        PurchaseRequest().postPurchase(<#T##newPurchase: Purchase##Purchase#>, accountId: <#T##String#>, completion: <#T##(BaseResponse<Purchase>?, NSError?) -> Void#>)
+
+    
         
         func generatePurchase(account : Account, merchant : Merchant){
             let merchId = merchant.merchantId
