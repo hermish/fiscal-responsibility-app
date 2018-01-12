@@ -11,8 +11,8 @@ import UIKit
 
 class DataManager {
     static let sharedInstance = DataManager()
-    
-    var users = [User]()
+	
+	var users = [User]()
     var whitelist = ["Target", "Walmart", "McDonalds"]
     
     var categories = ["Technology", "Grocery", "Coffee", "Bars", "Restaurants", "Clothing", "Other"]

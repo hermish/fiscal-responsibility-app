@@ -16,8 +16,6 @@ class TransferViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    
-    
 
     @IBAction func donePressed(_ sender: Any) {
         addFunds()
