@@ -57,15 +57,38 @@ class LoginViewController: UIViewController {
             }
         }
         
-//        let purchase = Purchase(merchantId: merchId, status: BillStatus(rawValue: "completed")!, medium: TransactionMedium(rawValue: "balance")!, payerId: acctId, amount: 1000, type: "merchant", purchaseDate: Date(), description: "iPhone Puchase" , purchaseId: "sup3rc00la1ph4num3r1cId")
-//
-//        PurchaseRequest().postPurchase(purchase, accountId: acctId, completion: {(response, error)}); in
-//        if let error = error{
-//
-//        }
-//        else if let response = response{
-//            print("Success")
-//        }
+        func generatePurchase(account : Account, merchant : Merchant){
+            let merchId = merchant.merchantId
+            let acctId = account.accountId
+            
+            var whitelist = ["Target", "Walmart", "McDonalds", "asd"]
+            
+            let purchase = Purchase(merchantId: merchId, status: BillStatus(rawValue: "completed")!, medium: TransactionMedium(rawValue: "balance")!,payerId: acctId, amount: 4.5, type:  "merchant" , purchaseDate: Date(), description: "Description", purchaseId: "asd")
+            
+            PurchaseRequest().postPurchase(purchase, accountId: acctId, completion:{(response, error) in
+                if (error != nil) {
+                    print(error!)
+                } else {
+                    let purchaseResponse = response as BaseResponse<Purchase>?
+                    let message = purchaseResponse?.message
+                    let purchaseCreated = purchaseResponse?.object
+                    print("\(message): \(purchaseCreated)")
+                    print()
+                    
+                    print("Merchant in whitelist: \(whitelist.contains(merchId))")
+                    
+                    if whitelist.contains(merchId) {
+                        print("Transaction at /(merchant.name) successful")
+                    }
+                    else{
+                        print("Sorry, you cannot shop here")
+                    }
+                    
+                }
+            })
+        }
+        
+
     
         
         

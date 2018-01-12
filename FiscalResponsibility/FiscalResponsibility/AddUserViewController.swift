@@ -81,6 +81,7 @@ class AddUserViewController: UIViewController {
             , lastName: lastName, nickName: nickName, cardNumber: cardNumber)
 
         DataManager.sharedInstance.users.append(user)
+        UserDefaults.standard.saveFundTo(kidName: firstName, transferAmount: 0.00)
         
         self.dismiss(animated: true, completion: nil)
     }

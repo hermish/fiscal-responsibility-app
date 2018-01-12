@@ -9,7 +9,10 @@
 import UIKit
 
 class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    
+    @IBOutlet weak var balanceLabel: UILabel!
+    
 	@IBAction func whitelist(_ sender: UIButton) {
 		performSegue(withIdentifier: "addSegue", sender: sender)
 	}
@@ -26,7 +29,9 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        balanceLabel.text = "$\(UserDefaults.standard.getAmountFrom(kidName: "sam"))"
+    }
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TableHeader")
 //        return headerView
@@ -37,13 +42,11 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
 //        return 40
 //    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
 
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         return whiteList.count //+ 1
