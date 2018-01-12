@@ -16,9 +16,6 @@ class LoginViewController: UIViewController {
 	
 	@IBAction func userLogin(_ sender: UIButton) {
 		if username.text == "User" && password.text == "Pass" {
-			
-
-			
 			performSegue(withIdentifier: "loginSegue", sender: sender)
 		}
 		else {

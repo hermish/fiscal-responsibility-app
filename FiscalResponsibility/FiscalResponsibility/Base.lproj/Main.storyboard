@@ -202,6 +202,9 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssF-Md-Cdx">
                                         <rect key="frame" x="343" y="9" width="22" height="22"/>
+                                        <connections>
+                                            <action selector="whitelist:" destination="u0D-qS-aVr" eventType="touchUpInside" id="Fql-hV-HSm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -231,7 +234,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="PLu-uQ-qvi" id="dv4-wv-8EN"/>
-                        <segue destination="0gc-6E-UH7" kind="show" identifier="add" id="nYU-Iu-rVO"/>
+                        <segue destination="0gc-6E-UH7" kind="show" identifier="addSegue" id="nYU-Iu-rVO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6t-wr-HNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -291,18 +294,65 @@
                     <view key="view" contentMode="scaleToFill" id="SEN-hq-38c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search by " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXK-5G-ywQ">
+                                <rect key="frame" x="10" y="94" width="355" height="61"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="51"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJa-Eq-Jaw">
+                                <rect key="frame" x="10" y="248" width="355" height="48"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Stores"/>
+                                <connections>
+                                    <segue destination="T17-JU-xHA" kind="show" id="shZ-pZ-aRK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hi0-PO-LeY">
+                                <rect key="frame" x="10" y="311" width="355" height="48"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Map"/>
+                                <connections>
+                                    <segue destination="O1l-dp-y5K" kind="show" id="zTX-rX-jVl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyd-b9-yHh">
+                                <rect key="frame" x="10" y="185" width="355" height="48"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Category"/>
+                                <connections>
+                                    <segue destination="gom-v6-svZ" kind="show" id="2fr-FC-gkR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="m6u-YV-fxT" firstAttribute="trailing" secondItem="wXK-5G-ywQ" secondAttribute="trailing" constant="10" id="4H1-QZ-epV"/>
+                            <constraint firstItem="jyd-b9-yHh" firstAttribute="leading" secondItem="m6u-YV-fxT" secondAttribute="leading" constant="10" id="5Pr-j6-n7o"/>
+                            <constraint firstItem="wXK-5G-ywQ" firstAttribute="leading" secondItem="m6u-YV-fxT" secondAttribute="leading" constant="10" id="EaA-h3-k39"/>
+                            <constraint firstItem="hi0-PO-LeY" firstAttribute="centerX" secondItem="m6u-YV-fxT" secondAttribute="centerX" id="HlR-vO-Q2O"/>
+                            <constraint firstItem="hi0-PO-LeY" firstAttribute="leading" secondItem="m6u-YV-fxT" secondAttribute="leading" constant="10" id="MtG-5U-HUm"/>
+                            <constraint firstItem="CJa-Eq-Jaw" firstAttribute="leading" secondItem="m6u-YV-fxT" secondAttribute="leading" constant="10" id="Oc4-hr-ciO"/>
+                            <constraint firstItem="m6u-YV-fxT" firstAttribute="trailing" secondItem="jyd-b9-yHh" secondAttribute="trailing" constant="10" id="RPK-u5-e9L"/>
+                            <constraint firstItem="jyd-b9-yHh" firstAttribute="centerX" secondItem="m6u-YV-fxT" secondAttribute="centerX" id="Tml-u6-CH9"/>
+                            <constraint firstItem="hi0-PO-LeY" firstAttribute="top" secondItem="CJa-Eq-Jaw" secondAttribute="bottom" constant="15" id="U7o-tb-SuZ"/>
+                            <constraint firstItem="jyd-b9-yHh" firstAttribute="top" secondItem="wXK-5G-ywQ" secondAttribute="bottom" constant="30" id="a6H-mm-0LA"/>
+                            <constraint firstItem="CJa-Eq-Jaw" firstAttribute="centerX" secondItem="m6u-YV-fxT" secondAttribute="centerX" id="csX-SM-bmy"/>
+                            <constraint firstItem="wXK-5G-ywQ" firstAttribute="top" secondItem="m6u-YV-fxT" secondAttribute="top" constant="30" id="eqq-tg-Thx"/>
+                            <constraint firstItem="CJa-Eq-Jaw" firstAttribute="top" secondItem="jyd-b9-yHh" secondAttribute="bottom" constant="15" id="i5M-wK-kqf"/>
+                            <constraint firstItem="m6u-YV-fxT" firstAttribute="trailing" secondItem="hi0-PO-LeY" secondAttribute="trailing" constant="10" id="oQO-gq-w0J"/>
+                            <constraint firstItem="m6u-YV-fxT" firstAttribute="trailing" secondItem="CJa-Eq-Jaw" secondAttribute="trailing" constant="10" id="wjg-iW-NoS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="m6u-YV-fxT"/>
                     </view>
-                    <connections>
-                        <segue destination="gom-v6-svZ" kind="show" identifier="catAdd" id="ibh-eY-gpJ"/>
-                        <segue destination="T17-JU-xHA" kind="show" identifier="storeAdd" id="bUg-L7-QPA"/>
-                        <segue destination="O1l-dp-y5K" kind="show" identifier="mapAdd" id="S81-pi-DDS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbu-TX-NjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3046" y="133"/>
+            <point key="canvasLocation" x="3009.5" y="132.5"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="l9b-Yk-Oxg">
@@ -373,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hO4-WM-vRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3804" y="840"/>
+            <point key="canvasLocation" x="3804" y="990"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s8M-UT-uKS">
