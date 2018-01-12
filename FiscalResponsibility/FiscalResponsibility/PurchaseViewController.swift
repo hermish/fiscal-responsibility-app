@@ -10,16 +10,15 @@ import UIKit
 
 class PurchaseViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var pickerData: [String] = [String]()
-
-    @IBOutlet weak var restaurantChooser: UIPickerView!
+    var pickerData = DataManager.sharedInstance.stores
+    @IBOutlet weak var restChooser: UIPickerView!
     @IBOutlet weak var textAmount: UITextField!
     
     @IBAction func purchasedPressed(_ sender: Any) {
         let lastUsed = DataManager.sharedInstance.lastUser!
         var new_balance = DataManager.sharedInstance.users[lastUsed]
 
-        let selectedIndex = restaurantChooser.selectedRow(inComponent: 0)
+        let selectedIndex = restChooser.selectedRow(inComponent: 0)
         // let storeName = pickerData[selectedIndex]
         // let categoryType = DataManager.sharedInstance.respective[selectedIndex]
         
@@ -28,9 +27,17 @@ class PurchaseViewController: UIViewController,  UIPickerViewDelegate, UIPickerV
             new_balance.balance -= transferAmt
             DataManager.sharedInstance.users[lastUsed] = new_balance
         } else {
-            
+            let alert = UIAlertController(title: "Error",
+                                          message: "Spending money here is not allowed!",
+                                          preferredStyle: UIAlertControllerStyle.alert)
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK",
+                                          style: UIAlertActionStyle.default,
+                                          handler: nil))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
         }
-        
+
         navigationController?.popViewController(animated: true)
     }
     
@@ -38,8 +45,8 @@ class PurchaseViewController: UIViewController,  UIPickerViewDelegate, UIPickerV
         super.viewDidLoad()
         pickerData = DataManager.sharedInstance.stores
         // Connect data:
-        self.restaurantChooser.delegate = self as! UIPickerViewDelegate
-        self.restaurantChooser.dataSource = self as! UIPickerViewDataSource
+        self.restChooser.delegate = self
+        self.restChooser.dataSource = self
         
         // Input data into the Array:
     }
@@ -57,7 +64,7 @@ class PurchaseViewController: UIViewController,  UIPickerViewDelegate, UIPickerV
     }
     
     // The data to return for the row and component (column) that's being passed in
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
     

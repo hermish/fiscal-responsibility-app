@@ -10,12 +10,23 @@ import UIKit
 
 class StoreAddTableViewController: UITableViewController {
 
-	@IBOutlet var storeListTable: UITableView!
+    @IBAction func addPress(_ sender: Any) {
+       // Add the fifth item always
+        DataManager.sharedInstance.users[DataManager.sharedInstance.lastUser!].whiteList.append(5)
+    }
+    @IBOutlet var storeListTable: UITableView!
 	override func viewDidLoad() {
         super.viewDidLoad()
 		tableView.allowsMultipleSelectionDuringEditing = true
 		tableView.setEditing(true, animated: false)
 
+        
+        let homeButton : UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action:  #selector(add))
+        
+        
+        self.navigationItem.rightBarButtonItem = homeButton
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,6 +34,14 @@ class StoreAddTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    @objc func add(){
+       DataManager.sharedInstance.whitelist.append("Best Buy")
+        DataManager.sharedInstance.whitelist.append("Walmart Super Center")
+        DataManager.sharedInstance.whitelist.append("Starbucks")
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,9 +61,10 @@ class StoreAddTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "storeListCell", for: indexPath)
-		cell.textLabel?.text=DataManager.sharedInstance.stores[indexPath.row]
-
+        cell.textLabel?.text=DataManager.sharedInstance.stores[indexPath.row]
+        
         return cell
+       
     }
 
     /*

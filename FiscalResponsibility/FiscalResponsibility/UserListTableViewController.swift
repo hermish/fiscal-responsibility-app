@@ -13,7 +13,7 @@ class UserListTableViewController: UITableViewController {
     var users:[User]?
     
     override func viewDidLoad() {
-		DataManager.sharedInstance.users.append(User(image: #imageLiteral(resourceName: "hqdefault.jpg"), firstName: "", lastName: "Valention", nickName: "Jason V", accountID: "12132", balance: 100, whiteList: [0]))
+		DataManager.sharedInstance.users.append(User(image: #imageLiteral(resourceName: "hqdefault.jpg"), firstName: "Hermish", lastName: "Mehta", nickName: "My School Card", accountID: "746378276134", balance: 100, whiteList: [0]))
         //self.performSegue(withIdentifier: "SegueToUserVC", sender: self)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

@@ -35,6 +35,8 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
         if let userNum = DataManager.sharedInstance.lastUser {
             let lastUser = DataManager.sharedInstance.users[userNum]
             balanceLabel.text = "$\(lastUser.balance)"

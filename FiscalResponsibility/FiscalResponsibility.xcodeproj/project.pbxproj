@@ -38,6 +38,7 @@
 		A079A39E200816FF008C6291 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079A39C200816FF008C6291 /* UserTableViewCell.swift */; };
 		A079A3A020081BAE008C6291 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079A39F20081BAE008C6291 /* DataManager.swift */; };
 		A0C3F1A42008CF410035C361 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3F1A32008CF410035C361 /* PurchaseViewController.swift */; };
+		A0C3F1A62009078F0035C361 /* BottomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3F1A52009078F0035C361 /* BottomCellTableViewCell.swift */; };
 		ED49F02D200899B000F1FBF7 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED49F02C200899B000F1FBF7 /* CategoryTableViewController.swift */; };
 		ED49F02F2008A0B500F1FBF7 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED49F02E2008A0B500F1FBF7 /* CategoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		A079A39C200816FF008C6291 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		A079A39F20081BAE008C6291 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A0C3F1A32008CF410035C361 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
+		A0C3F1A52009078F0035C361 /* BottomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCellTableViewCell.swift; sourceTree = "<group>"; };
 		ED49F02C200899B000F1FBF7 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		ED49F02E2008A0B500F1FBF7 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +165,7 @@
 				77E8E74620084DB900722314 /* TransferViewController.swift */,
 				A079A39B200816FF008C6291 /* AddUserViewController.swift */,
 				00F76B86200899C20073118A /* StoreAddTableViewController.swift */,
+				A0C3F1A52009078F0035C361 /* BottomCellTableViewCell.swift */,
 				A079A39C200816FF008C6291 /* UserTableViewCell.swift */,
 				A079A39F20081BAE008C6291 /* DataManager.swift */,
 			);
@@ -246,6 +249,7 @@
 				77E8E7392007EC1E00722314 /* WhiteListTableViewCell.swift in Sources */,
 				77E8E74920086DB200722314 /* UserDefault+Extension.swift in Sources */,
 				A079A39E200816FF008C6291 /* UserTableViewCell.swift in Sources */,
+				A0C3F1A62009078F0035C361 /* BottomCellTableViewCell.swift in Sources */,
 				00F76B8520084D3A0073118A /* MapAddViewController.swift in Sources */,
 				00F76B7E200810AD0073118A /* Merchant.swift in Sources */,
 				77E8E73B2007ECD400722314 /* WhiteListTableViewController.swift in Sources */,

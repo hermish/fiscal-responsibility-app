@@ -13,7 +13,7 @@ class DataManager {
     static let sharedInstance = DataManager()
 	
 	var users = [User]()
-    var whitelist = ["Target", "Walmart", "McDonalds"]
+    var whitelist = ["Apple", "Kroger", "McDonalds"]
     
     var categories = ["Technology", "Grocery", "Coffee", "Bars", "Restaurants", "Clothing", "Other"]
     
