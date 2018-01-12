@@ -610,12 +610,9 @@
                                     <action selector="addPhotoPressed:" destination="ZU4-dw-RJz" eventType="touchUpInside" id="pZW-W3-nkc"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTD-k9-Jrc">
-                                <rect key="frame" x="111.13481953291694" y="410.99999999999955" width="150.00000000000023" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="GZN-kj-Y0T"/>
-                                    <constraint firstAttribute="width" constant="150" id="RXZ-2R-wgN"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTD-k9-Jrc">
+                                <rect key="frame" x="112" y="408" width="150.00000000000023" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="75"/>
