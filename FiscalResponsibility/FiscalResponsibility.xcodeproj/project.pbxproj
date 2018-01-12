@@ -36,6 +36,8 @@
 		A079A39D200816FF008C6291 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079A39B200816FF008C6291 /* AddUserViewController.swift */; };
 		A079A39E200816FF008C6291 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079A39C200816FF008C6291 /* UserTableViewCell.swift */; };
 		A079A3A020081BAE008C6291 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079A39F20081BAE008C6291 /* DataManager.swift */; };
+		ED49F02D200899B000F1FBF7 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED49F02C200899B000F1FBF7 /* CategoryTableViewController.swift */; };
+		ED49F02F2008A0B500F1FBF7 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED49F02E2008A0B500F1FBF7 /* CategoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		A079A39B200816FF008C6291 /* AddUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		A079A39C200816FF008C6291 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		A079A39F20081BAE008C6291 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		ED49F02C200899B000F1FBF7 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		ED49F02E2008A0B500F1FBF7 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 				00F76B8420084D3A0073118A /* MapAddViewController.swift */,
 				A06455A82007DC2E005DD8F2 /* AppDelegate.swift */,
 				A06455AC2007DC2E005DD8F2 /* Main.storyboard */,
+				ED49F02C200899B000F1FBF7 /* CategoryTableViewController.swift */,
+				ED49F02E2008A0B500F1FBF7 /* CategoryTableViewCell.swift */,
 				77E8E73C2007EF4200722314 /* UserListTableViewController.swift */,
 				77E8E74820086DB200722314 /* UserDefault+Extension.swift */,
 				77E8E73A2007ECD400722314 /* WhiteListTableViewController.swift */,
@@ -255,6 +261,8 @@
 				00F76B75200810AD0073118A /* NSEClient.swift in Sources */,
 				00F76B77200810AD0073118A /* Purchase.swift in Sources */,
 				A06455A92007DC2E005DD8F2 /* AppDelegate.swift in Sources */,
+				ED49F02D200899B000F1FBF7 /* CategoryTableViewController.swift in Sources */,
+				ED49F02F2008A0B500F1FBF7 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
