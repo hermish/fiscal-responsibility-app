@@ -88,6 +88,38 @@ class LoginViewController: UIViewController {
             })
         }
         
+//        func testGetMerchants() {
+//            MerchantRequest().getMerchants(completion: {(response, error) in
+//                if (error != nil) {
+//                    print(error!)
+//                } else {
+//                    if let array = response as Array<Merchant>? {
+//                        var mList = [String]()
+//                        for merchant in array{
+//                            if (!(mList.contains(merchant.category[0])) && merchant.category.count > 0){
+//                                mList.append(merchant.category[0])
+//                            }
+//                        }
+//                        print(mList)
+//                    }
+//                }
+//            })
+//        }
+//
+//        func testGetMerchant(merchantId: String) {
+//            MerchantRequest().getMerchant(merchantId, completion:{(response, error) in
+//                if (error != nil) {
+//                    print(error!)
+//                } else {
+//                    if let merchant = response as Merchant? {
+//                        print(merchant)
+//                    }
+//                }
+//              //  self.testPostMerchant()
+//            })
+//        }
+
+//        testGetMerchants()
 
     
         
