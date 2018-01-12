@@ -18,9 +18,9 @@ class DataManager {
 
 struct User {
     var image:UIImage?
-    var firstName:String?
-    var lastName:String?
-    var nickName:String?
-    var cardNumber:String?
-    
-    }
+    var firstName:String
+    var lastName:String
+    var nickName:String
+    var accountID:String
+}
+

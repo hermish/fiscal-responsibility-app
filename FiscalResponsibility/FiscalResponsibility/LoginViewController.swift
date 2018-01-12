@@ -95,7 +95,38 @@ class LoginViewController: UIViewController {
 
     
         
+        func generatePurchase(account : Account, merchant : Merchant){
+            let merchId = merchant.merchantId
+            let acctId = account.accountId
+            
+            var whitelist = ["Target", "Walmart", "McDonalds", "asd"]
+            
+            let purchase = Purchase(merchantId: merchId, status: BillStatus(rawValue: "completed")!, medium: TransactionMedium(rawValue: "balance")!,payerId: acctId, amount: 4.5, type:  "merchant" , purchaseDate: Date(), description: "Description", purchaseId: "asd")
+            
+            PurchaseRequest().postPurchase(purchase, accountId: acctId, completion:{(response, error) in
+                if (error != nil) {
+                    print(error!)
+                } else {
+                    let purchaseResponse = response as BaseResponse<Purchase>?
+                    let message = purchaseResponse?.message
+                    let purchaseCreated = purchaseResponse?.object
+                    print("\(message): \(purchaseCreated)")
+                    print()
+                    
+                    print("Merchant in whitelist: \(whitelist.contains(merchId))")
+                    
+                    if whitelist.contains(merchId) {
+                        print("Transaction at /(merchant.name) successful")
+                    }
+                    else{
+                        print("Sorry, you cannot shop here")
+                    }
+                    
+                }
+            })
+        }
         
+        //generatePurchase(account: acc, merchant: merch)
         
         
     
@@ -105,11 +136,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
