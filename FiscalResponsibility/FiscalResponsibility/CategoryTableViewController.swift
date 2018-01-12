@@ -15,6 +15,8 @@ class CategoryTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		tableView.allowsMultipleSelectionDuringEditing = true
+		tableView.setEditing(true, animated: false)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
