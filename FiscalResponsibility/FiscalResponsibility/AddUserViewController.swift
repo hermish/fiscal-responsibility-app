@@ -74,7 +74,8 @@ class AddUserViewController: UIViewController {
                             lastName: lastName,
                             nickName: nickName,
                             accountID: accountID,
-                            balance: 0.0)
+                            balance: 0.0,
+							whiteList: [])
             
             DataManager.sharedInstance.users.append(user)
             self.dismiss(animated: true, completion: nil)
