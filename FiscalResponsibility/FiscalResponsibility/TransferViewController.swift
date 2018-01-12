@@ -14,9 +14,10 @@ class TransferViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
+    
+    
 
     @IBAction func donePressed(_ sender: Any) {
         addFunds()
@@ -24,7 +25,10 @@ class TransferViewController: UIViewController {
     }
     func addFunds() {
         let transferAmt = self.transferAmountTextField.text!
-        print(transferAmt)
+//        DataManager.sharedInstance.transferAmount = Double(transferAmt)!
+        UserDefaults.standard.saveFundTo(kidName: "sam", transferAmount: Double(transferAmt)!)
     }
+    
+
     
 }

@@ -120,7 +120,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b44-ab-NTV">
                                 <rect key="frame" x="0.0" y="64" width="375" height="120"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hqdefault" translatesAutoresizingMaskIntoConstraints="NO" id="2uX-0A-Kkw">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2uX-0A-Kkw">
                                         <rect key="frame" x="5" y="5" width="110" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="2uX-0A-Kkw" secondAttribute="height" multiplier="1:1" id="kIZ-mx-dLS"/>
@@ -233,6 +233,7 @@
                         <viewLayoutGuide key="safeArea" id="Sja-zz-MEx"/>
                     </view>
                     <connections>
+                        <outlet property="balanceLabel" destination="8He-sa-uD5" id="sVs-Zx-IOE"/>
                         <outlet property="tableView" destination="PLu-uQ-qvi" id="dv4-wv-8EN"/>
                         <segue destination="0gc-6E-UH7" kind="show" identifier="addSegue" id="nYU-Iu-rVO"/>
                     </connections>
@@ -658,6 +659,5 @@
     </scenes>
     <resources>
         <image name="Capital_one_logo" width="2072" height="936"/>
-        <image name="hqdefault" width="480" height="360"/>
     </resources>
 </document>
