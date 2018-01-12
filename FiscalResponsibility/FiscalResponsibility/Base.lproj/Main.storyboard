@@ -137,13 +137,16 @@
                                         <rect key="frame" x="137" y="39" width="169" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <color key="textColor" red="0.0" green="0.89438957253886009" blue="0.29704332246687792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.0" green="0.89411764705882346" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ve0-oL-vAf">
                                         <rect key="frame" x="137" y="77" width="105" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Transfer Funds"/>
+                                        <connections>
+                                            <segue destination="TxQ-Ne-cvo" kind="show" id="mdf-yU-5er"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -234,6 +237,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6t-wr-HNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2269.5999999999999" y="132.68365817091455"/>
+        </scene>
+        <!--Transfer View Controller-->
+        <scene sceneID="Wz3-RG-Wnz">
+            <objects>
+                <viewController id="TxQ-Ne-cvo" customClass="TransferViewController" customModule="FiscalResponsibility" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="15e-pn-pqv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q4T-oh-rIQ">
+                                <rect key="frame" x="20" y="241" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cPO-tP-B94"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tU2-k9-eqQ">
+                                <rect key="frame" x="138.5" y="331" width="97" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Transfer">
+                                    <color key="titleColor" red="0.0" green="0.89411764709999997" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="donePressed:" destination="TxQ-Ne-cvo" eventType="touchUpInside" id="Rj9-A0-GTF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q4T-oh-rIQ" firstAttribute="leading" secondItem="BHl-R3-k5u" secondAttribute="leading" constant="20" id="2IP-IJ-anM"/>
+                            <constraint firstItem="tU2-k9-eqQ" firstAttribute="centerX" secondItem="BHl-R3-k5u" secondAttribute="centerX" id="QKp-dD-VEC"/>
+                            <constraint firstItem="BHl-R3-k5u" firstAttribute="trailing" secondItem="Q4T-oh-rIQ" secondAttribute="trailing" constant="20" id="TL0-fC-1uS"/>
+                            <constraint firstItem="Q4T-oh-rIQ" firstAttribute="centerX" secondItem="BHl-R3-k5u" secondAttribute="centerX" id="jXz-o0-iKJ"/>
+                            <constraint firstItem="tU2-k9-eqQ" firstAttribute="top" secondItem="Q4T-oh-rIQ" secondAttribute="bottom" constant="50" id="uUu-75-1E2"/>
+                            <constraint firstItem="BHl-R3-k5u" firstAttribute="bottom" secondItem="tU2-k9-eqQ" secondAttribute="bottom" constant="290" id="xrz-O5-3Ug"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BHl-R3-k5u"/>
+                    </view>
+                    <connections>
+                        <outlet property="transferAmountTextField" destination="Q4T-oh-rIQ" id="fjE-A8-ENW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8jw-z8-nRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2269.5999999999999" y="990.85457271364328"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2qH-Bl-eJB">

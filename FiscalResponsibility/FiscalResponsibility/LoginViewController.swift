@@ -60,10 +60,16 @@ class LoginViewController: UIViewController {
 			}
 		}
 		
-		let test = Purchase(merchantId: merchId, status: "completed", medium: "balance", payerId: acctId, amount: 1000, type: merchant, purchaseDate: Date(), description: "iPhone Puchase" , purchaseId: <#T##String#>)
-		
-		PurchaseRequest().postPurchase(<#T##newPurchase: Purchase##Purchase#>, accountId: <#T##String#>, completion: <#T##(BaseResponse<Purchase>?, NSError?) -> Void#>)
-		
+//        let purchase = Purchase(merchantId: merchId, status: BillStatus(rawValue: "completed")!, medium: TransactionMedium(rawValue: "balance")!, payerId: acctId, amount: 1000, type: "merchant", purchaseDate: Date(), description: "iPhone Puchase" , purchaseId: "sup3rc00la1ph4num3r1cId")
+//
+//        PurchaseRequest().postPurchase(purchase, accountId: acctId, completion: {(response, error)}); in
+//        if let error = error{
+//
+//        }
+//        else if let response = response{
+//            print("Success")
+//        }
+    
 		
 		
 		
