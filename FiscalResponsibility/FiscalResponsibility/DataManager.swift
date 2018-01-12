@@ -14,6 +14,15 @@ class DataManager {
     
     var users = [User]()
     var whitelist = ["Target", "Walmart", "McDonalds"]
+    
+    var categories = ["Technology", "Grocery", "Coffee", "Bars", "Restaurants", "Clothing", "Other"]
+	
+	var stores = ["Apple", "AT&T", "Electronic Frontier Foundation","Best Buy", "Tops Friendly Market",
+				  "Walmart Super Center", "Wegmans", "Kroger", "Starbucks", "Ithica Coffee Company",
+				  "Gimme! Coffee", "Greyhouse Coffee & Supply Co.", "Triphammer Wines & Spirits",
+				  "Ithica Beer Co", "The Haunt",	"Northeast Pizza & Beer Co", "Buffalo Wild Wings",
+				  "Mahogany Grill", "The Boatyard Grill", "Saigon Grill", "Terra Rosa", "Dockers",
+				  "Urban Outfitters", "JCPenny"]
 }
 
 struct User {

@@ -355,22 +355,37 @@
             </objects>
             <point key="canvasLocation" x="3009.5" y="132.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Category Table View Controller-->
         <scene sceneID="l9b-Yk-Oxg">
             <objects>
-                <tableViewController id="gom-v6-svZ" sceneMemberID="viewController">
+                <tableViewController id="gom-v6-svZ" customClass="CategoryTableViewController" customModule="FiscalResponsibility" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wtX-x0-w9h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="14f-kD-4P8">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" id="14f-kD-4P8" customClass="CategoryTableViewCell" customModule="FiscalResponsibility" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="14f-kD-4P8" id="KBG-Wt-cm8">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8F-dk-X8N">
+                                            <rect key="frame" x="16" y="12" width="70.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="v8F-dk-X8N" firstAttribute="centerY" secondItem="KBG-Wt-cm8" secondAttribute="centerY" id="3n9-GY-SCJ"/>
+                                        <constraint firstItem="v8F-dk-X8N" firstAttribute="leading" secondItem="KBG-Wt-cm8" secondAttribute="leadingMargin" id="qu7-cR-4fn"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryLabel" destination="v8F-dk-X8N" id="dee-3X-Gxo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -378,21 +393,24 @@
                             <outlet property="delegate" destination="gom-v6-svZ" id="25c-wh-l6a"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="wtX-x0-w9h" id="ehF-2R-dqe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3c3-Tj-40C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3804" y="-645"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Store Add Table View Controller-->
         <scene sceneID="lZX-o7-NOs">
             <objects>
-                <tableViewController id="T17-JU-xHA" sceneMemberID="viewController">
+                <tableViewController id="T17-JU-xHA" customClass="StoreAddTableViewController" customModule="FiscalResponsibility" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="q41-4A-Y51">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="z1P-jY-L2j">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="storeListCell" id="z1P-jY-L2j">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z1P-jY-L2j" id="dHk-7f-Uaf">
@@ -406,6 +424,9 @@
                             <outlet property="delegate" destination="T17-JU-xHA" id="rCP-dT-vh0"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="storeListTable" destination="q41-4A-Y51" id="ovM-d4-bjs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fp1-jh-YVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
