@@ -24,6 +24,7 @@
 		00F76B7F200810AD0073118A /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F76B70200810AD0073118A /* Transfer.swift */; };
 		00F76B81200810D60073118A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F76B80200810D60073118A /* SwiftyJSON.swift */; };
 		00F76B8520084D3A0073118A /* MapAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F76B8420084D3A0073118A /* MapAddViewController.swift */; };
+		00F76B87200899C20073118A /* StoreAddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F76B86200899C20073118A /* StoreAddTableViewController.swift */; };
 		77E8E7392007EC1E00722314 /* WhiteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8E7382007EC1E00722314 /* WhiteListTableViewCell.swift */; };
 		77E8E73B2007ECD400722314 /* WhiteListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8E73A2007ECD400722314 /* WhiteListTableViewController.swift */; };
 		77E8E73D2007EF4200722314 /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8E73C2007EF4200722314 /* UserListTableViewController.swift */; };
@@ -58,6 +59,7 @@
 		00F76B70200810AD0073118A /* Transfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
 		00F76B80200810D60073118A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		00F76B8420084D3A0073118A /* MapAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAddViewController.swift; sourceTree = "<group>"; };
+		00F76B86200899C20073118A /* StoreAddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAddTableViewController.swift; sourceTree = "<group>"; };
 		77E8E7382007EC1E00722314 /* WhiteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteListTableViewCell.swift; sourceTree = "<group>"; };
 		77E8E73A2007ECD400722314 /* WhiteListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteListTableViewController.swift; sourceTree = "<group>"; };
 		77E8E73C2007EF4200722314 /* UserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				77E8E73A2007ECD400722314 /* WhiteListTableViewController.swift */,
 				77E8E74620084DB900722314 /* TransferViewController.swift */,
 				A079A39B200816FF008C6291 /* AddUserViewController.swift */,
+				00F76B86200899C20073118A /* StoreAddTableViewController.swift */,
 				A079A39C200816FF008C6291 /* UserTableViewCell.swift */,
 				A079A39F20081BAE008C6291 /* DataManager.swift */,
 			);
@@ -245,6 +248,7 @@
 				77E8E74720084DB900722314 /* TransferViewController.swift in Sources */,
 				77E8E73D2007EF4200722314 /* UserListTableViewController.swift in Sources */,
 				00F76B7C200810AD0073118A /* Withdrawal.swift in Sources */,
+				00F76B87200899C20073118A /* StoreAddTableViewController.swift in Sources */,
 				00F76B71200810AD0073118A /* EnterpriseRequests.swift in Sources */,
 				00F76B7A200810AD0073118A /* Bill.swift in Sources */,
 				00F76B81200810D60073118A /* SwiftyJSON.swift in Sources */,
