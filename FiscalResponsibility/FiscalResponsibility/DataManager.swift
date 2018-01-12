@@ -14,6 +14,8 @@ class DataManager {
     
     var users = [User]()
     var whitelist = ["Target", "Walmart", "McDonalds"]
+    
+    var categories = ["Technology", "Grocery", "Coffee", "Bars", "Restaurants", "Clothing", "Other"]
 }
 
 struct User {
