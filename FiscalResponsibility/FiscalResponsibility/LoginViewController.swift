@@ -25,39 +25,39 @@ class LoginViewController: UIViewController {
     }
     
 //    @IBAction func overrideLoging(_ sender: UIButton) {
-//		//MerchantRequest().getMerchants(<#T##geocode: Geocode?##Geocode?#>, rad: <#T##String?#>, completion: <#T##(Array<Merchant>?, NSError?) -> Void#>)
+//        //MerchantRequest().getMerchants(<#T##geocode: Geocode?##Geocode?#>, rad: <#T##String?#>, completion: <#T##(Array<Merchant>?, NSError?) -> Void#>)
 //
 //
-//		func testGetMerchants() {
-//			MerchantRequest().getMerchants(completion: {(response, error) in
+//        func testGetMerchants() {
+//            MerchantRequest().getMerchants(completion: {(response, error) in
 //
-//				if (error != nil) {
-//					print(error!)
-//				} else {
-//					if let array = response as Array<Merchant>? {
-//						var mlist = [String]()
-//						if array.count > 0 {
-//							let merchant = array[0] as Merchant?
-//						//	self.testGetMerchant(merchantId: merchant!.merchantId)
-//							for merch in array{
-//								if merch.category.count > 0{
-//									if !(mlist.contains(merch.category[0])){
-//									mlist.append(merch.category[0])
-//									}
-//								}
+//                if (error != nil) {
+//                    print(error!)
+//                } else {
+//                    if let array = response as Array<Merchant>? {
+//                        var mlist = [String]()
+//                        if array.count > 0 {
+//                            let merchant = array[0] as Merchant?
+//                        //    self.testGetMerchant(merchantId: merchant!.merchantId)
+//                            for merch in array{
+//                                if merch.category.count > 0{
+//                                    if !(mlist.contains(merch.category[0])){
+//                                    mlist.append(merch.category[0])
+//                                    }
+//                                }
 //
 //
-//							}
-//							print(mlist)
-//						} else {
-//							print("No merchants found")
-//						}
-//					}
-//				}
-//			})
-//		}
+//                            }
+//                            print(mlist)
+//                        } else {
+//                            print("No merchants found")
+//                        }
+//                    }
+//                }
+//            })
+//        }
 //
-//		testGetMerchants()
+//        testGetMerchants()
 //
 //
 ////        let acctId = "5a563d195eaa612c093b0af6"
@@ -112,49 +112,140 @@ class LoginViewController: UIViewController {
 //                print()
 //            }
 //        }
-//
-//
-//
-//
-//
-//
-//        func generatePurchase(account : Account, merchant : Merchant){
-//            let merchId = merchant.merchantId
-//            let acctId = account.accountId
-//
-//            var whitelist = ["Target", "Walmart", "McDonalds", "asd"]
-//
-//            let purchase = Purchase(merchantId: merchId, status: BillStatus(rawValue: "completed")!, medium: TransactionMedium(rawValue: "balance")!,payerId: acctId, amount: 4.5, type:  "merchant" , purchaseDate: Date(), description: "Description", purchaseId: "asd")
-//
-//            PurchaseRequest().postPurchase(purchase, accountId: acctId, completion:{(response, error) in
+        
+
+        
+        MerchantRequest().getMerchant(merchId) { (merchant, error) in
+            if let error = error {
+                print("There is an error: " + error.localizedFailureReason!)
+            }
+            else if let merchant = merchant{
+                merch = merchant
+                let str = ""
+                for cat in merchant.category {
+                    
+                }
+                print("Merchant's Name:" + merchant.name)
+                print("Merchant's Address:" + merchant.address.streetNumber + merchant.address.streetName + merchant.address.city)
+                print("Merchant's Category:" + merchant.category[0])
+                print("Merchant's Geocode: \(merchant.geocode.lat) , \(merchant.geocode.lng)")
+                print("Merchant's Merchant ID:" + merchant.merchantId)
+                print()
+            }
+        }
+        
+        func generatePurchase(account : Account, merchant : Merchant){
+            let merchId = merchant.merchantId
+            let acctId = account.accountId
+            
+            var whitelist = ["Target", "Walmart", "McDonalds", "asd"]
+            
+            let purchase = Purchase(merchantId: merchId, status: BillStatus(rawValue: "completed")!, medium: TransactionMedium(rawValue: "balance")!,payerId: acctId, amount: 4.5, type:  "merchant" , purchaseDate: Date(), description: "Description", purchaseId: "asd")
+            
+            PurchaseRequest().postPurchase(purchase, accountId: acctId, completion:{(response, error) in
+                if (error != nil) {
+                    print(error!)
+                } else {
+                    let purchaseResponse = response as BaseResponse<Purchase>?
+                    let message = purchaseResponse?.message
+                    let purchaseCreated = purchaseResponse?.object
+                    print("\(message): \(purchaseCreated)")
+                    print()
+                    
+                    print("Merchant in whitelist: \(whitelist.contains(merchId))")
+                    
+                    if whitelist.contains(merchId) {
+                        print("Transaction at /(merchant.name) successful")
+                    }
+                    else{
+                        print("Sorry, you cannot shop here")
+                    }
+                    
+                }
+                print("Merchant's Name:" + merchant.name)
+                print("Merchant's Address:" + merchant.address.streetNumber + merchant.address.streetName + merchant.address.city)
+                print("Merchant's Category:" + merchant.category[0])
+                print("Merchant's Geocode: \(merchant.geocode.lat) , \(merchant.geocode.lng)")
+                print("Merchant's Merchant ID:" + merchant.merchantId)
+            }
+        }
+        
+//        func testGetMerchants() {
+//            MerchantRequest().getMerchants(completion: {(response, error) in
 //                if (error != nil) {
 //                    print(error!)
 //                } else {
-//                    let purchaseResponse = response as BaseResponse<Purchase>?
-//                    let message = purchaseResponse?.message
-//                    let purchaseCreated = purchaseResponse?.object
-//                    print("\(message): \(purchaseCreated)")
-//                    print()
+//                    if let array = response as Array<Merchant>? {
+//                        var mList = [String]()
+//                        for merchant in array{
+//                            if (!(mList.contains(merchant.category[0])) && merchant.category.count > 0){
+//                                mList.append(merchant.category[0])
+//                            }
+//                        }
+//                        print(mList)
+//                    }
+//                }
+//            })
+//        }
 //
-//                    print("Merchant in whitelist: \(whitelist.contains(merchId))")
-//
-//                    if whitelist.contains(merchId) {
-//                        print("Transaction at /(merchant.name) successful")
+//        func testGetMerchant(merchantId: String) {
+//            MerchantRequest().getMerchant(merchantId, completion:{(response, error) in
+//                if (error != nil) {
+//                    print(error!)
+//                } else {
+//                    if let merchant = response as Merchant? {
+//                        print(merchant)
 //                    }
 //                    else{
 //                        print("Sorry, you cannot shop here")
 //                    }
 //
 //                }
+//              //  self.testPostMerchant()
 //            })
 //        }
-//
-//        //generatePurchase(account: acc, merchant: merch)
-//
-//
-//
-//    }
-	
+
+//        testGetMerchants()
+
+    
+        
+        func generatePurchase(account : Account, merchant : Merchant){
+            let merchId = merchant.merchantId
+            let acctId = account.accountId
+            
+            var whitelist = ["Target", "Walmart", "McDonalds", "asd"]
+            
+            let purchase = Purchase(merchantId: merchId, status: BillStatus(rawValue: "completed")!, medium: TransactionMedium(rawValue: "balance")!,payerId: acctId, amount: 4.5, type:  "merchant" , purchaseDate: Date(), description: "Description", purchaseId: "asd")
+            
+            PurchaseRequest().postPurchase(purchase, accountId: acctId, completion:{(response, error) in
+                if (error != nil) {
+                    print(error!)
+                } else {
+                    let purchaseResponse = response as BaseResponse<Purchase>?
+                    let message = purchaseResponse?.message
+                    let purchaseCreated = purchaseResponse?.object
+                    print("\(message): \(purchaseCreated)")
+                    print()
+                    
+                    print("Merchant in whitelist: \(whitelist.contains(merchId))")
+                    
+                    if whitelist.contains(merchId) {
+                        print("Transaction at /(merchant.name) successful")
+                    }
+                    else{
+                        print("Sorry, you cannot shop here")
+                    }
+                    
+                }
+            })
+        }
+        
+        //generatePurchase(account: acc, merchant: merch)
+        
+        
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
