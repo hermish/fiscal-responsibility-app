@@ -10,64 +10,71 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-	@IBOutlet weak var username: UITextField!
-	@IBOutlet weak var password: UITextField!
-	@IBOutlet weak var labelMessage: UILabel!
-	
-	@IBAction func userLogin(_ sender: UIButton) {
-		if username.text == "User" && password.text == "Pass" {
-			performSegue(withIdentifier: "loginSegue", sender: sender)
-		}
-		else {
-			labelMessage.text = "Invalid username or password"
-		}
-		
-	}
-	
-	@IBAction func overrideLoging(_ sender: UIButton) {
-		let acctId = "5a563d195eaa612c093b0af6"
-		let merchId = "57cf75cea73e494d8675ec49" //Apple Merchant ID
-		AccountRequest().getAccount(acctId, completion: { (account, error) in
-			if let error = error{
-				print("There is an error: " + error.localizedFailureReason!)
-				
-			}
-			else if let account = account {
-				print(account.nickname)
-				print()
-			}
-					})
-		
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var labelMessage: UILabel!
+    
+    @IBAction func userLogin(_ sender: UIButton) {
+        if username.text == "User" && password.text == "Pass" {
+            performSegue(withIdentifier: "loginSegue", sender: sender)
+        }
+        else {
+            labelMessage.text = "Invalid username or password"
+        }
+        
+    }
+    
+    @IBAction func overrideLoging(_ sender: UIButton) {
+        let acctId = "5a563d195eaa612c093b0af6"
+        let merchId = "57cf75cea73e494d8675ec49" //Apple Merchant ID
+        AccountRequest().getAccount(acctId, completion: { (account, error) in
+            if let error = error{
+                print("There is an error: " + error.localizedFailureReason!)
+                
+            }
+            else if let account = account {
+                print(account.nickname)
+                print()
+            }
+                    })
+        
 
-		
-		MerchantRequest().getMerchant(merchId) { (merchant, error) in
-			if let error = error {
-				print("There is an error: " + error.localizedFailureReason!)
-			}
-			else if let merchant = merchant{
-				let str = ""
-				for cat in merchant.category {
-					
-				}
-				print("Merchant's Name:" + merchant.name)
-				print("Merchant's Address:" + merchant.address.streetNumber + merchant.address.streetName + merchant.address.city)
-				print("Merchant's Category:" + merchant.category[0])
-				print("Merchant's Geocode: \(merchant.geocode.lat) , \(merchant.geocode.lng)")
-				print("Merchant's Merchant ID:" + merchant.merchantId)
-			}
-		}
-		
-//		let test = Purchase(merchantId: merchId, status: "completed", medium: "balance", payerId: acctId, amount: 1000, type: merchant, purchaseDate: Date(), description: "iPhone Puchase" , purchaseId: <#T##String#>)
+        
+        MerchantRequest().getMerchant(merchId) { (merchant, error) in
+            if let error = error {
+                print("There is an error: " + error.localizedFailureReason!)
+            }
+            else if let merchant = merchant{
+                let str = ""
+                for cat in merchant.category {
+                    
+                }
+                print("Merchant's Name:" + merchant.name)
+                print("Merchant's Address:" + merchant.address.streetNumber + merchant.address.streetName + merchant.address.city)
+                print("Merchant's Category:" + merchant.category[0])
+                print("Merchant's Geocode: \(merchant.geocode.lat) , \(merchant.geocode.lng)")
+                print("Merchant's Merchant ID:" + merchant.merchantId)
+            }
+        }
+        
+//        let purchase = Purchase(merchantId: merchId, status: BillStatus(rawValue: "completed")!, medium: TransactionMedium(rawValue: "balance")!, payerId: acctId, amount: 1000, type: "merchant", purchaseDate: Date(), description: "iPhone Puchase" , purchaseId: "sup3rc00la1ph4num3r1cId")
 //
-//		PurchaseRequest().postPurchase(<#T##newPurchase: Purchase##Purchase#>, accountId: <#T##String#>, completion: <#T##(BaseResponse<Purchase>?, NSError?) -> Void#>)
-		
-		
-		
-		
-	
-	}
-	
-	override func viewDidLoad() {
+//        PurchaseRequest().postPurchase(purchase, accountId: acctId, completion: {(response, error)}); in
+//        if let error = error{
+//
+//        }
+//        else if let response = response{
+//            print("Success")
+//        }
+    
+        
+        
+        
+        
+    
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
