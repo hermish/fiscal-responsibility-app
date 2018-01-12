@@ -14,7 +14,8 @@ class AddUserViewController: UIViewController {
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var nickName: UITextField!
-    @IBOutlet weak var cardNumber: UITextField!
+    @IBOutlet weak var accountID: UITextField!
+    
     var userImage:UIImage?
     
     override func viewDidLoad() {
@@ -37,7 +38,6 @@ class AddUserViewController: UIViewController {
     }
     
     @IBAction func addPhotoPressed(_ sender: Any) {
-        
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
         
@@ -59,34 +59,29 @@ class AddUserViewController: UIViewController {
         self.present(actionSheet, animated: true, completion: nil)
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func updateUsers() {
-        
-        let firstName = self.firstName.text!
-        let lastName = self.lastName.text!
-        let cardNumber = self.cardNumber.text!
-        let nickName = self.nickName.text!
-        let photo = self.userImage!
-        
-        let user = User(image: photo, firstName: firstName
-            , lastName: lastName, nickName: nickName, cardNumber: cardNumber)
-
-        DataManager.sharedInstance.users.append(user)
-        UserDefaults.standard.saveFundTo(kidName: firstName, transferAmount: 0.00)
-        
-        self.dismiss(animated: true, completion: nil)
+        // Only dismiss and update if account given
+        if let accountID = self.accountID.text, !accountID.isEmpty {
+            let firstName = self.firstName.text ?? ""
+            let lastName = self.lastName.text ?? ""
+            let nickName = self.nickName.text ?? ""
+            let photo = self.userImage
+            
+            // Create User Object
+            let user = User(image: photo,
+                            firstName: firstName,
+                            lastName: lastName,
+                            nickName: nickName,
+                            accountID: accountID)
+            
+            DataManager.sharedInstance.users.append(user)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 
+// Extension to implement functions for image picking
 extension AddUserViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         userImage = info[UIImagePickerControllerOriginalImage] as? UIImage

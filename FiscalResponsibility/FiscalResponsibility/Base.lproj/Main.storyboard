@@ -482,7 +482,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdP-L4-MdQ">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdP-L4-MdQ">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <userDefinedRuntimeAttributes>
@@ -508,7 +508,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="userCardNum" destination="ZE8-DH-Dej" id="uKC-zr-g1O"/>
+                                    <outlet property="userAccountID" destination="ZE8-DH-Dej" id="WKQ-It-yGG"/>
                                     <outlet property="userImage" destination="cdP-L4-MdQ" id="CTq-ku-nQm"/>
                                     <outlet property="userName" destination="TLK-gW-SpK" id="oF4-BJ-bDz"/>
                                 </connections>
@@ -569,14 +569,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="nickname"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Credit Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xV2-h5-Zp6">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xV2-h5-Zp6">
                                 <rect key="frame" x="16" y="239" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VGh-Js-0AQ"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="cc-number"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvw-5e-pTy">
                                 <rect key="frame" x="16" y="289" width="343" height="30"/>
@@ -589,9 +589,17 @@
                                     <action selector="addPhotoPressed:" destination="ZU4-dw-RJz" eventType="touchUpInside" id="pZW-W3-nkc"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTD-k9-Jrc">
-                                <rect key="frame" x="67" y="429" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTD-k9-Jrc">
+                                <rect key="frame" x="111.13481953291694" y="410.99999999999955" width="150.00000000000023" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="GZN-kj-Y0T"/>
+                                    <constraint firstAttribute="width" constant="150" id="RXZ-2R-wgN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -627,7 +635,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cardNumber" destination="xV2-h5-Zp6" id="dl6-Vc-xca"/>
+                        <outlet property="accountID" destination="xV2-h5-Zp6" id="npZ-Vo-dYF"/>
                         <outlet property="firstName" destination="VxS-pW-flz" id="tBX-RG-BqC"/>
                         <outlet property="image" destination="eTD-k9-Jrc" id="pPY-Yu-42z"/>
                         <outlet property="lastName" destination="KK7-aN-cpA" id="W3U-ol-7nj"/>
@@ -636,7 +644,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ybc-BK-7EE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2270" y="-645"/>
+            <point key="canvasLocation" x="2269.5999999999999" y="-645.42728635682158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jQg-lC-39h">

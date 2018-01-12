@@ -25,19 +25,73 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func overrideLoging(_ sender: UIButton) {
-        let acctId = "5a563d195eaa612c093b0af6"
-        let merchId = "57cf75cea73e494d8675ec49" //Apple Merchant ID
-        AccountRequest().getAccount(acctId, completion: { (account, error) in
-            if let error = error{
-                print("There is an error: " + error.localizedFailureReason!)
-                
-            }
-            else if let account = account {
-                print(account.nickname)
-                print()
-            }
-                    })
-        
+		//MerchantRequest().getMerchants(<#T##geocode: Geocode?##Geocode?#>, rad: <#T##String?#>, completion: <#T##(Array<Merchant>?, NSError?) -> Void#>)
+		
+		
+		func testGetMerchants() {
+			MerchantRequest().getMerchants(completion: {(response, error) in
+				
+				if (error != nil) {
+					print(error!)
+				} else {
+					if let array = response as Array<Merchant>? {
+						var mlist = [String]()
+						if array.count > 0 {
+							let merchant = array[0] as Merchant?
+						//	self.testGetMerchant(merchantId: merchant!.merchantId)
+							for merch in array{
+								if merch.category.count > 0{
+									if !(mlist.contains(merch.category[0])){
+									mlist.append(merch.category[0])
+									}
+								}
+								
+								
+							}
+							print(mlist)
+						} else {
+							print("No merchants found")
+						}
+					}
+				}
+			})
+		}
+		
+		testGetMerchants()
+		
+		
+//        let acctId = "5a563d195eaa612c093b0af6"
+//        let merchId = "57cf75cea73e494d8675ec49" //Apple Merchant ID
+//        AccountRequest().getAccount(acctId, completion: { (account, error) in
+//            if let error = error{
+//                print("There is an error: " + error.localizedFailureReason!)
+//
+//            }
+//            else if let account = account {
+//                print(account.nickname)
+//                print()
+//            }
+//                    })
+//
+//
+//
+//        MerchantRequest().getMerchant(merchId) { (merchant, error) in
+//            if let error = error {
+//                print("There is an error: " + error.localizedFailureReason!)
+//            }
+//            else if let merchant = merchant{
+//                let str = ""
+//                for cat in merchant.category {
+//
+//                }
+//                print("Merchant's Name:" + merchant.name)
+//                print("Merchant's Address:" + merchant.address.streetNumber + merchant.address.streetName + merchant.address.city)
+//                print("Merchant's Category:" + merchant.category[0])
+//                print("Merchant's Geocode: \(merchant.geocode.lat) , \(merchant.geocode.lng)")
+//                print("Merchant's Merchant ID:" + merchant.merchantId)
+//            }
+//        }
+		
 
         
         MerchantRequest().getMerchant(merchId) { (merchant, error) in
@@ -45,6 +99,7 @@ class LoginViewController: UIViewController {
                 print("There is an error: " + error.localizedFailureReason!)
             }
             else if let merchant = merchant{
+                merch = merchant
                 let str = ""
                 for cat in merchant.category {
                     
@@ -54,6 +109,7 @@ class LoginViewController: UIViewController {
                 print("Merchant's Category:" + merchant.category[0])
                 print("Merchant's Geocode: \(merchant.geocode.lat) , \(merchant.geocode.lng)")
                 print("Merchant's Merchant ID:" + merchant.merchantId)
+                print()
             }
         }
         
@@ -85,7 +141,12 @@ class LoginViewController: UIViewController {
                     }
                     
                 }
-            })
+                print("Merchant's Name:" + merchant.name)
+                print("Merchant's Address:" + merchant.address.streetNumber + merchant.address.streetName + merchant.address.city)
+                print("Merchant's Category:" + merchant.category[0])
+                print("Merchant's Geocode: \(merchant.geocode.lat) , \(merchant.geocode.lng)")
+                print("Merchant's Merchant ID:" + merchant.merchantId)
+            }
         }
         
 //        func testGetMerchants() {
@@ -123,7 +184,38 @@ class LoginViewController: UIViewController {
 
     
         
+        func generatePurchase(account : Account, merchant : Merchant){
+            let merchId = merchant.merchantId
+            let acctId = account.accountId
+            
+            var whitelist = ["Target", "Walmart", "McDonalds", "asd"]
+            
+            let purchase = Purchase(merchantId: merchId, status: BillStatus(rawValue: "completed")!, medium: TransactionMedium(rawValue: "balance")!,payerId: acctId, amount: 4.5, type:  "merchant" , purchaseDate: Date(), description: "Description", purchaseId: "asd")
+            
+            PurchaseRequest().postPurchase(purchase, accountId: acctId, completion:{(response, error) in
+                if (error != nil) {
+                    print(error!)
+                } else {
+                    let purchaseResponse = response as BaseResponse<Purchase>?
+                    let message = purchaseResponse?.message
+                    let purchaseCreated = purchaseResponse?.object
+                    print("\(message): \(purchaseCreated)")
+                    print()
+                    
+                    print("Merchant in whitelist: \(whitelist.contains(merchId))")
+                    
+                    if whitelist.contains(merchId) {
+                        print("Transaction at /(merchant.name) successful")
+                    }
+                    else{
+                        print("Sorry, you cannot shop here")
+                    }
+                    
+                }
+            })
+        }
         
+        //generatePurchase(account: acc, merchant: merch)
         
         
     
@@ -133,11 +225,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
