@@ -16,9 +16,6 @@ class LoginViewController: UIViewController {
 	
 	@IBAction func userLogin(_ sender: UIButton) {
 		if username.text == "User" && password.text == "Pass" {
-			
-
-			
 			performSegue(withIdentifier: "loginSegue", sender: sender)
 		}
 		else {
@@ -42,6 +39,7 @@ class LoginViewController: UIViewController {
 					})
 		
 
+		
 		MerchantRequest().getMerchant(merchId) { (merchant, error) in
 			if let error = error {
 				print("There is an error: " + error.localizedFailureReason!)
@@ -58,7 +56,10 @@ class LoginViewController: UIViewController {
 				print("Merchant's Merchant ID:" + merchant.merchantId)
 			}
 		}
-		print()
+		
+//		let test = Purchase(merchantId: merchId, status: "completed", medium: "balance", payerId: acctId, amount: 1000, type: merchant, purchaseDate: Date(), description: "iPhone Puchase" , purchaseId: <#T##String#>)
+//
+//		PurchaseRequest().postPurchase(<#T##newPurchase: Purchase##Purchase#>, accountId: <#T##String#>, completion: <#T##(BaseResponse<Purchase>?, NSError?) -> Void#>)
 		
 		
 		

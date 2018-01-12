@@ -10,9 +10,11 @@ import UIKit
 
 class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
+	@IBAction func whitelist(_ sender: UIButton) {
+		performSegue(withIdentifier: "addSegue", sender: sender)
+	}
+	@IBOutlet weak var tableView: UITableView!
     var whiteList = ["Target", "Walmart", "McDonalds", "Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds",]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,23 +46,15 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return whiteList.count + 1
+        return whiteList.count //+ 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! HeaderCellTableViewCell
-            cell.contentView.backgroundColor = .lightGray
-            return cell
-
-        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "whiteListCell", for: indexPath) as! WhiteListTableViewCell
-            cell.whiteListLabel.text = whiteList[indexPath.row-1]
+            cell.whiteListLabel.text = whiteList[indexPath.row]
             return cell
-        }
-      
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0{
             return 40
@@ -76,7 +70,7 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            whiteList.remove(at: indexPath.row - 1)
+            whiteList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
