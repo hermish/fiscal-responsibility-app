@@ -25,47 +25,74 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func overrideLoging(_ sender: UIButton) {
-        let acctId = "5a563d195eaa612c093b0af6"
-        let merchId = "57cf75cea73e494d8675ec49" //Apple Merchant ID
-        AccountRequest().getAccount(acctId, completion: { (account, error) in
-            if let error = error{
-                print("There is an error: " + error.localizedFailureReason!)
-                
-            }
-            else if let account = account {
-                print(account.nickname)
-                print()
-            }
-                    })
-        
+		//MerchantRequest().getMerchants(<#T##geocode: Geocode?##Geocode?#>, rad: <#T##String?#>, completion: <#T##(Array<Merchant>?, NSError?) -> Void#>)
+		
+		
+		func testGetMerchants() {
+			MerchantRequest().getMerchants(completion: {(response, error) in
+				
+				if (error != nil) {
+					print(error!)
+				} else {
+					if let array = response as Array<Merchant>? {
+						var mlist = [String]()
+						if array.count > 0 {
+							let merchant = array[0] as Merchant?
+						//	self.testGetMerchant(merchantId: merchant!.merchantId)
+							for merch in array{
+								if merch.category.count > 0{
+									if !(mlist.contains(merch.category[0])){
+									mlist.append(merch.category[0])
+									}
+								}
+								
+								
+							}
+							print(mlist)
+						} else {
+							print("No merchants found")
+						}
+					}
+				}
+			})
+		}
+		
+		testGetMerchants()
+		
+		
+//        let acctId = "5a563d195eaa612c093b0af6"
+//        let merchId = "57cf75cea73e494d8675ec49" //Apple Merchant ID
+//        AccountRequest().getAccount(acctId, completion: { (account, error) in
+//            if let error = error{
+//                print("There is an error: " + error.localizedFailureReason!)
+//
+//            }
+//            else if let account = account {
+//                print(account.nickname)
+//                print()
+//            }
+//                    })
+//
+//
+//
+//        MerchantRequest().getMerchant(merchId) { (merchant, error) in
+//            if let error = error {
+//                print("There is an error: " + error.localizedFailureReason!)
+//            }
+//            else if let merchant = merchant{
+//                let str = ""
+//                for cat in merchant.category {
+//
+//                }
+//                print("Merchant's Name:" + merchant.name)
+//                print("Merchant's Address:" + merchant.address.streetNumber + merchant.address.streetName + merchant.address.city)
+//                print("Merchant's Category:" + merchant.category[0])
+//                print("Merchant's Geocode: \(merchant.geocode.lat) , \(merchant.geocode.lng)")
+//                print("Merchant's Merchant ID:" + merchant.merchantId)
+//            }
+//        }
+		
 
-        
-        MerchantRequest().getMerchant(merchId) { (merchant, error) in
-            if let error = error {
-                print("There is an error: " + error.localizedFailureReason!)
-            }
-            else if let merchant = merchant{
-                let str = ""
-                for cat in merchant.category {
-                    
-                }
-                print("Merchant's Name:" + merchant.name)
-                print("Merchant's Address:" + merchant.address.streetNumber + merchant.address.streetName + merchant.address.city)
-                print("Merchant's Category:" + merchant.category[0])
-                print("Merchant's Geocode: \(merchant.geocode.lat) , \(merchant.geocode.lng)")
-                print("Merchant's Merchant ID:" + merchant.merchantId)
-            }
-        }
-        
-//        let purchase = Purchase(merchantId: merchId, status: BillStatus(rawValue: "completed")!, medium: TransactionMedium(rawValue: "balance")!, payerId: acctId, amount: 1000, type: "merchant", purchaseDate: Date(), description: "iPhone Puchase" , purchaseId: "sup3rc00la1ph4num3r1cId")
-//
-//        PurchaseRequest().postPurchase(purchase, accountId: acctId, completion: {(response, error)}); in
-//        if let error = error{
-//
-//        }
-//        else if let response = response{
-//            print("Success")
-//        }
     
         
         
