@@ -14,7 +14,6 @@ class TransferViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     @IBAction func donePressed(_ sender: Any) {
@@ -28,11 +27,10 @@ class TransferViewController: UIViewController {
         navigationController?.popViewController(animated: true)
         // self.dismiss(animated: true, completion: nil)
     }
+    
+    // USER DEFAULT METHODS
     func addFunds() {
         // DataManager.sharedInstance.transferAmount = Double(transferAmt)!
         // UserDefaults.standard.saveFundTo(kidName: "sam", transferAmount: Double(transferAmt)!)
     }
-    
-
-    
 }

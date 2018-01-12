@@ -20,7 +20,6 @@ class AddUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -46,18 +45,15 @@ class AddUserViewController: UIViewController {
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
             imagePickerController.sourceType = .camera
             self.present(imagePickerController, animated: true, completion: nil)
-            
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action) in
             imagePickerController.sourceType = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
-            
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
-        
     }
     
     func updateUsers() {

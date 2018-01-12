@@ -51,9 +51,8 @@ class PurchaseViewController: UIViewController,  UIPickerViewDelegate, UIPickerV
         // Input data into the Array:
     }
     
-    // Other Picker Methods
+    // OTHER PICKER METHODS
     // The number of columns of data
-
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

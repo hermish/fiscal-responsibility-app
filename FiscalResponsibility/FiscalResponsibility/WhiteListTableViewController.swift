@@ -16,7 +16,6 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var tableView: UITableView!
     var whiteList = DataManager.sharedInstance.whitelist
 
-    
 	@IBAction func whitelist(_ sender: UIButton) {
 		performSegue(withIdentifier: "addSegue", sender: sender)
 	}
@@ -46,7 +45,6 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     // MARK: - Table view data source
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataManager.sharedInstance.whitelist.count
     }
@@ -75,13 +73,3 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
 }
-
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TableHeader")
-//        return headerView
-//    }
-
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        if
-//        return 40
-//    }

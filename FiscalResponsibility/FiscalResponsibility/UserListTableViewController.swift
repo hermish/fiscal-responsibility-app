@@ -14,7 +14,7 @@ class UserListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
 		DataManager.sharedInstance.users.append(User(image: #imageLiteral(resourceName: "hqdefault.jpg"), firstName: "Hermish", lastName: "Mehta", nickName: "My School Card", accountID: "746378276134", balance: 100, whiteList: [0]))
-        //self.performSegue(withIdentifier: "SegueToUserVC", sender: self)
+        // self.performSegue(withIdentifier: "SegueToUserVC", sender: self)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,9 +34,7 @@ class UserListTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return users!.count
     }
 
@@ -58,5 +56,5 @@ class UserListTableViewController: UITableViewController {
         let selectedUser = users![indexPath.row]
         DataManager.sharedInstance.lastUser = indexPath.row
         self.performSegue(withIdentifier: "SegueToUserVC", sender: selectedUser)
-    }
+    }   
 }

@@ -27,7 +27,6 @@ class MapAddViewController: UIViewController, UISearchBarDelegate {
 		// Dispose of any resources that can be recreated.
 	}
 	
-	
 	func centerMapOnLocation(location: CLLocation) {
 		let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
 																  regionRadius, regionRadius)
@@ -48,5 +47,4 @@ class MapAddViewController: UIViewController, UISearchBarDelegate {
 			self.centerMapOnLocation(location: searchlocation)
 		}
 	}
-	
 }

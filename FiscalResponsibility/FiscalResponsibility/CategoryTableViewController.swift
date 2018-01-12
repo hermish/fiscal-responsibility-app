@@ -10,7 +10,6 @@ import UIKit
 
 class CategoryTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-   
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -23,21 +22,8 @@ class CategoryTableViewController: UIViewController, UITableViewDelegate, UITabl
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TableHeader")
-    //        return headerView
-    //    }
-    
-    //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    //        if
-    //        return 40
-    //    }
-    
     
     // MARK: - Table view data source
-    
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataManager.sharedInstance.categories.count
     }
@@ -51,18 +37,5 @@ class CategoryTableViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 40
     }
-    
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        // Return false if you do not want the specified item to be editable.
-//        return true
-//    }
-//
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        }
-//    }
-    
-    
 }
 
