@@ -18,13 +18,19 @@ class TransferViewController: UIViewController {
     }
 
     @IBAction func donePressed(_ sender: Any) {
-        addFunds()
+        // addFunds()
+        let transferAmt = Double(self.transferAmountTextField.text ?? "") ?? 0
+        if let userNum = DataManager.sharedInstance.lastUser {
+            var lastUser = DataManager.sharedInstance.users[userNum]
+            lastUser.balance += transferAmt
+            DataManager.sharedInstance.users[userNum] = lastUser
+        }
         navigationController?.popViewController(animated: true)
+        // self.dismiss(animated: true, completion: nil)
     }
     func addFunds() {
-        let transferAmt = self.transferAmountTextField.text!
-//        DataManager.sharedInstance.transferAmount = Double(transferAmt)!
-        UserDefaults.standard.saveFundTo(kidName: "sam", transferAmount: Double(transferAmt)!)
+        // DataManager.sharedInstance.transferAmount = Double(transferAmt)!
+        // UserDefaults.standard.saveFundTo(kidName: "sam", transferAmount: Double(transferAmt)!)
     }
     
 

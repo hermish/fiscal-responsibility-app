@@ -10,19 +10,24 @@ import UIKit
 
 class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
     @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageLabel: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    var whiteList = DataManager.sharedInstance.whitelist
+
     
 	@IBAction func whitelist(_ sender: UIButton) {
 		performSegue(withIdentifier: "addSegue", sender: sender)
 	}
-	@IBOutlet weak var tableView: UITableView!
-    var whiteList = DataManager.sharedInstance.whitelist
+    @IBAction func showPurchase(_ sender: Any) {
+        // performSegue(withIdentifier: "showPurchaseSegue", sender: sender)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.register(UINib(nibName: "TableHeader", bundle: nil),
-//                           forHeaderFooterViewReuseIdentifier: "TableHeader")
+        // tableView.register(UINib(nibName: "TableHeader", bundle: nil),
+        //                   forHeaderFooterViewReuseIdentifier: "TableHeader")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,23 +35,16 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     override func viewWillAppear(_ animated: Bool) {
-        balanceLabel.text = "$\(UserDefaults.standard.getAmountFrom(kidName: ""))"
+        if let userNum = DataManager.sharedInstance.lastUser {
+            let lastUser = DataManager.sharedInstance.users[userNum]
+            balanceLabel.text = "$\(lastUser.balance)"
+            nameLabel.text = "\(lastUser.firstName) \(lastUser.lastName)"
+            imageLabel.image = lastUser.image ?? #imageLiteral(resourceName: "hqdefault.jpg")
+        }
     }
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TableHeader")
-//        return headerView
-//    }
-    
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        if
-//        return 40
-//    }
-
 
     // MARK: - Table view data source
 
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataManager.sharedInstance.whitelist.count
     }
@@ -74,6 +72,14 @@ class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITab
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-
-
 }
+
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TableHeader")
+//        return headerView
+//    }
+
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        if
+//        return 40
+//    }
