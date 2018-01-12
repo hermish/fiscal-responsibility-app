@@ -16,9 +16,6 @@ class LoginViewController: UIViewController {
 	
 	@IBAction func userLogin(_ sender: UIButton) {
 		if username.text == "User" && password.text == "Pass" {
-			
-
-			
 			performSegue(withIdentifier: "loginSegue", sender: sender)
 		}
 		else {
@@ -60,9 +57,9 @@ class LoginViewController: UIViewController {
 			}
 		}
 		
-		let test = Purchase(merchantId: merchId, status: "completed", medium: "balance", payerId: acctId, amount: 1000, type: merchant, purchaseDate: Date(), description: "iPhone Puchase" , purchaseId: <#T##String#>)
-		
-		PurchaseRequest().postPurchase(<#T##newPurchase: Purchase##Purchase#>, accountId: <#T##String#>, completion: <#T##(BaseResponse<Purchase>?, NSError?) -> Void#>)
+//		let test = Purchase(merchantId: merchId, status: "completed", medium: "balance", payerId: acctId, amount: 1000, type: merchant, purchaseDate: Date(), description: "iPhone Puchase" , purchaseId: <#T##String#>)
+//
+//		PurchaseRequest().postPurchase(<#T##newPurchase: Purchase##Purchase#>, accountId: <#T##String#>, completion: <#T##(BaseResponse<Purchase>?, NSError?) -> Void#>)
 		
 		
 		

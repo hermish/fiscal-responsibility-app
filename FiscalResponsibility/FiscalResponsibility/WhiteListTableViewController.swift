@@ -10,7 +10,10 @@ import UIKit
 
 class WhiteListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
+	@IBAction func whitelist(_ sender: UIButton) {
+		performSegue(withIdentifier: "addSegue", sender: sender)
+	}
+	@IBOutlet weak var tableView: UITableView!
     var whiteList = ["Target", "Walmart", "McDonalds", "Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds","Target", "Walmart", "McDonalds",]
     
     override func viewDidLoad() {
