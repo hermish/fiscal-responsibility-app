@@ -1,5 +1,4 @@
 # Xcode
-#
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## Build generated
@@ -70,3 +69,6 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/screenshots
 fastlane/test_output
+
+# Mac
+.DS_Store
